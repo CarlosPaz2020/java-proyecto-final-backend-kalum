@@ -13,6 +13,7 @@
         <class>edu.carlospaz.kalum.models.DetalleActividad</class>
         <class>edu.carlospaz.kalum.models.DetalleNota</class>
         <class>edu.carlospaz.kalum.models.Clase</class>
+        <class>edu.carlospaz.kalum.models.AsignacionAlumno</class>
         <properties>
             <!-- Conexión con MySQL-->
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/kalum?
