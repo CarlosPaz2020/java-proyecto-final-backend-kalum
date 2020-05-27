@@ -27,7 +27,7 @@ public class App extends Application {
     public void start(Stage escenarioPrincipal) throws Exception {
         this.escenarioPrincipal = escenarioPrincipal;
         this.escenarioPrincipal.setTitle("Kalum v1.0.0");
-        this.escenarioPrincipal.getIcons().add(new Image("/img/kalum.png"));
+        this.escenarioPrincipal.getIcons().add(new Image("/img/icon_kalum_32x32.png"));
         mostrarVentanaPrincipal();
         this.escenarioPrincipal.show();
     }
