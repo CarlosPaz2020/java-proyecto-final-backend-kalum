@@ -8,6 +8,7 @@ import edu.carlospaz.kalum.controllers.VentanaPrincipalController;
 import edu.carlospaz.kalum.models.CarreraTecnica;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +27,7 @@ public class App extends Application {
     public void start(Stage escenarioPrincipal) throws Exception {
         this.escenarioPrincipal = escenarioPrincipal;
         this.escenarioPrincipal.setTitle("Kalum v1.0.0");
+        this.escenarioPrincipal.getIcons().add(new Image("/img/kalum.png"));
         mostrarVentanaPrincipal();
         this.escenarioPrincipal.show();
     }
