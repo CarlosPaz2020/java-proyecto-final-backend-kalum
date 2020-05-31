@@ -22,9 +22,9 @@
           <TableColumn fx:id="colNombre" minWidth="0.0" prefWidth="368.0" text="NOMBRE" />
         </columns>
       </TableView>
+      <Button layoutX="22.0" layoutY="357.0" mnemonicParsing="false" onAction="#mostrarVentanaCarreraTecnicaAddUpdate" prefWidth="80.0" text="NUEVO" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="357.0" />
+      <Button layoutX="116.0" layoutY="357.0" mnemonicParsing="false" onAction="#modificar" prefWidth="80.0" text="MODIFICAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="357.0" />
+      <Button layoutX="220.0" layoutY="357.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="80.0" text="ELIMINAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="215.0" AnchorPane.topAnchor="357.0" />
       <Button layoutX="570.0" layoutY="357.0" mnemonicParsing="false" onAction="#salir" prefWidth="80.0" text="SALIR" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="15.0" />
-      <Button layoutX="22.0" layoutY="357.0" mnemonicParsing="false" onAction="#mostrarVentanaCarreraTecnicaAddUpdate" prefWidth="80.0" text="NUEVO" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" />
-      <Button layoutX="116.0" layoutY="357.0" mnemonicParsing="false" onAction="#modificar" prefWidth="80.0" text="MODIFICAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="115.0" />
-      <Button layoutX="220.0" layoutY="357.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="80.0" text="ELIMINAR" AnchorPane.leftAnchor="215.0" />
    </children>
 </AnchorPane>

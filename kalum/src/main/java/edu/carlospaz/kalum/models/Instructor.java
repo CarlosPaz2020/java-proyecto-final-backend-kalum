@@ -10,13 +10,12 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 @Entity
 @Table(name = "instructor")
-@NamedQueries({@NamedQuery(name = "Instructor.findAll", query = "select i from Instructor i")})
+@NamedQueries({ @NamedQuery(name = "Instructor.findAll", query = "select i from Instructor i") })
 public class Instructor implements Serializable {
     private final StringProperty instructorId;
     private final StringProperty apellidos;
@@ -39,8 +38,8 @@ public class Instructor implements Serializable {
         this.foto = new SimpleStringProperty();
     }
 
-    public Instructor(String instructorId, String apellidos, String nombres, String direccion, String telefono,
-                      String comentario, String estatus, String foto) {
+    public Instructor(String instructorId, String apellidos, String nombres, 
+            String direccion, String telefono, String comentario, String estatus, String foto) {
         this.instructorId = new SimpleStringProperty();
         this.apellidos = new SimpleStringProperty();
         this.nombres = new SimpleStringProperty();
@@ -164,7 +163,7 @@ public class Instructor implements Serializable {
         return this.foto;
     }
 
-    //Relación con la clase Clase
+    // Relación con la clase Clase
     @OneToMany(mappedBy = "instructor", fetch = FetchType.EAGER)
     public List<Clase> getClases() {
         return clases;
@@ -177,10 +176,9 @@ public class Instructor implements Serializable {
     //
     @Override
     public String toString() {
-        return this.getInstructorId() + " " + this.getApellidos()
-                + " " + this.getNombres() + " " + this.getDireccion()
-                + " " + this.getTelefono() + " " + this.getComentario()
-                + " " + this.getEstatus() + " " + this.getFoto();
+        return this.getInstructorId() + " " + this.getApellidos() + " " + this.getNombres() + " " + this.getDireccion()
+                + " " + this.getTelefono() + " " + this.getComentario() + " " + this.getEstatus() + " "
+                + this.getFoto();
     }
 
     private static final long serialVersionUID = 1L;

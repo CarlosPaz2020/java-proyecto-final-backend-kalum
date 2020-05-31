@@ -16,7 +16,7 @@
       </Label>
       <Line endX="549.0" layoutX="100.0" layoutY="40.0" startX="-100.0" />
       <TextField fx:id="txtNombre" layoutX="77.0" layoutY="81.0" prefHeight="25.0" prefWidth="350.0" />
-      <Button layoutX="22.0" layoutY="357.0" mnemonicParsing="false" onAction="#guardar" prefWidth="80.0" text="GUARDAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" />
+      <Button layoutX="22.0" layoutY="357.0" mnemonicParsing="false" onAction="#guardar" prefWidth="80.0" text="GUARDAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="357.0" />
       <Button layoutX="116.0" layoutY="357.0" mnemonicParsing="false" onAction="#cancelar" prefWidth="80.0" text="CANCELAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="115.0" />
       <Label layoutX="15.0" layoutY="85.0" text="NOMBRE:" />
    </children>

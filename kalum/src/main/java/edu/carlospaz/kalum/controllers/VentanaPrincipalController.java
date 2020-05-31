@@ -17,6 +17,10 @@ public class VentanaPrincipalController implements Initializable {
         this.directorEscena.mostrarVentanaCarrera();
     }
 
+    public void mostrarVentanaInstructor() {
+        this.directorEscena.mostrarVentanaInstructor();
+    }
+
     public App getDirectorEscena() {
         return directorEscena;
     }
