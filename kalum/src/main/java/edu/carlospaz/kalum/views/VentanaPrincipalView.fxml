@@ -13,8 +13,8 @@
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaCarrera" text="Carreras Técnicas" />
                   <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaInstructor" text="Instructores" />
-                  <MenuItem mnemonicParsing="false" text="Salones" />
-              <MenuItem mnemonicParsing="false" text="Horarios" />
+                  <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaSalon" text="Salones" />
+              <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaHorario" text="Horarios" />
                   <MenuItem mnemonicParsing="false" text="Alumnos" />
                   <MenuItem mnemonicParsing="false" text="Módulos" />
                   <MenuItem mnemonicParsing="false" text="Seminarios" />

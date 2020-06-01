@@ -1,12 +1,14 @@
 package edu.carlospaz.kalum.controllers;
 
 import java.net.URL;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import edu.carlospaz.kalum.App;
 import edu.carlospaz.kalum.db.Conexion;
-import edu.carlospaz.kalum.models.CarreraTecnica;
+import edu.carlospaz.kalum.models.Horario;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -17,56 +19,56 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
-public class VentanaCarreraTecnicaController implements Initializable {
+public class VentanaHorarioController implements Initializable {
     private App directorEscena;
-    private ObservableList<CarreraTecnica> listaCarreras;
-    
-    @FXML
-    private TableView<CarreraTecnica> tblCarreras;
+    private ObservableList<Horario> listaHorarios;
 
     @FXML
-    private TableColumn<CarreraTecnica, String> colId;
+    private TableView<Horario> tblHorarios;
 
     @FXML
-    private TableColumn<CarreraTecnica, String> colNombre;
+    private TableColumn<Horario, Date> colHorarioInicio;
+
+    @FXML
+    private TableColumn<Horario, Date> colHorarioFinal;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        listaCarreras = FXCollections.observableArrayList(
-                (List<CarreraTecnica>) Conexion.getInstancia().findAll("CarreraTecnica.findAll"));
-        this.tblCarreras.setItems(listaCarreras);
-        this.colId.setCellValueFactory(cellId
-                -> cellId.getValue().codigoCarrera());
-        this.colNombre.setCellValueFactory(cellNombre
-                -> cellNombre.getValue().nombre());
+        listaHorarios = FXCollections
+                .observableArrayList((List<Horario>) Conexion.getInstancia().findAll("Horario.findAll"));
+        this.tblHorarios.setItems(listaHorarios);
+        this.colHorarioInicio.setCellValueFactory(cellHorarioInicio 
+            -> cellHorarioInicio.getValue().horarioInicio());
+        this.colHorarioFinal.setCellValueFactory(cellHorarioFinal 
+            -> cellHorarioFinal.getValue().horarioFinal());
     }
 
-    public void modificar() {
-        if (this.tblCarreras.getSelectionModel().getSelectedItem() == null) {
+    public void modificar() throws ParseException {
+        if (this.tblHorarios.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Carreras Técnicas");
+            alert.setTitle("Horarios");
             alert.setHeaderText(null);
             alert.setContentText("Debe seleccionar un registro");
             alert.initOwner(null);
             alert.show();
         } else {
-            CarreraTecnica carreraTecnica = this.tblCarreras.getSelectionModel().getSelectedItem();
-            this.directorEscena.mostrarVentanaCarreraTecnicaAddUpdate(carreraTecnica);
+            Horario horario = this.tblHorarios.getSelectionModel().getSelectedItem();
+            this.directorEscena.mostrarVentanaHorarioAddUpdate(horario);
         }
     }
 
     public void eliminar() {
-        if (this.tblCarreras.getSelectionModel().getSelectedItem() == null) {
+        if (this.tblHorarios.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Carreras Técnicas");
+            alert.setTitle("Horarios");
             alert.setHeaderText(null);
             alert.setContentText("Debe seleccionar un registro");
             alert.initOwner(null);
             alert.show();
         } else {
-            CarreraTecnica carreraTecnica = this.tblCarreras.getSelectionModel().getSelectedItem();
+            Horario horario = this.tblHorarios.getSelectionModel().getSelectedItem();
             Alert alert = new Alert(AlertType.CONFIRMATION);
-            alert.setTitle("Carreras Técnicas");
+            alert.setTitle("Horarios");
             alert.setHeaderText(null);
             alert.setContentText("¿Desea eliminar el registro?");
             alert.initOwner(null);
@@ -74,23 +76,23 @@ public class VentanaCarreraTecnicaController implements Initializable {
             Optional<ButtonType> seleccion = alert.showAndWait();
 
             if (seleccion.get() == ButtonType.OK) {
-                Conexion.getInstancia().eliminar(carreraTecnica);
+                Conexion.getInstancia().eliminar(horario);
                 Alert alert1 = new Alert(AlertType.INFORMATION);
-                alert1.setTitle("Carreras Técnicas");
+                alert1.setTitle("Horarios");
                 alert1.setHeaderText(null);
                 alert1.setContentText("Registro eliminado correctamente");
                 alert1.initOwner(null);
                 alert1.show();
-                this.directorEscena.mostrarVentanaCarrera();
+                this.directorEscena.mostrarVentanaHorario();
             } else {
-                this.directorEscena.mostrarVentanaCarrera();
+                this.directorEscena.mostrarVentanaHorario();
             }
         }
     }
 
     public void salir() {
         Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle("Carreras Técnicas");
+        alert.setTitle("Horarios");
         alert.setHeaderText(null);
         alert.setContentText("¿Desea salir de esta ventana?");
         alert.initOwner(null);
@@ -100,7 +102,7 @@ public class VentanaCarreraTecnicaController implements Initializable {
         if (seleccion.get() == ButtonType.OK) {
             this.directorEscena.mostrarVentanaPrincipal();
         } else {
-            this.directorEscena.mostrarVentanaCarrera();
+            this.directorEscena.mostrarVentanaHorario();
         }
     }
 
@@ -108,8 +110,8 @@ public class VentanaCarreraTecnicaController implements Initializable {
         this.directorEscena.mostrarVentanaPrincipal();
     }
 
-    public void mostrarVentanaCarreraTecnicaAddUpdate() {
-        this.directorEscena.mostrarVentanaCarreraTecnicaAddUpdate();
+    public void mostrarVentanaHorarioAddUpdate() {
+        this.directorEscena.mostrarVentanaHorarioAddUpdate();
     }
 
     public App getDirectorEscena() {

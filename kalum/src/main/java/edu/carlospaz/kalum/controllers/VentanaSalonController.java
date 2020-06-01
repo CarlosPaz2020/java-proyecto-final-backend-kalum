@@ -6,7 +6,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import edu.carlospaz.kalum.App;
 import edu.carlospaz.kalum.db.Conexion;
-import edu.carlospaz.kalum.models.CarreraTecnica;
+import edu.carlospaz.kalum.models.Salon;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -17,56 +17,61 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
-public class VentanaCarreraTecnicaController implements Initializable {
+public class VentanaSalonController implements Initializable {
     private App directorEscena;
-    private ObservableList<CarreraTecnica> listaCarreras;
+    private ObservableList<Salon> listaSalones;
     
     @FXML
-    private TableView<CarreraTecnica> tblCarreras;
+    private TableView<Salon> tblSalones;
 
     @FXML
-    private TableColumn<CarreraTecnica, String> colId;
+    private TableColumn<Salon, String> colNombre;
 
     @FXML
-    private TableColumn<CarreraTecnica, String> colNombre;
+    private TableColumn<Salon, String> colDescripcion;
+
+    @FXML
+    private TableColumn<Salon, Number> colCapacidad;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        listaCarreras = FXCollections.observableArrayList(
-                (List<CarreraTecnica>) Conexion.getInstancia().findAll("CarreraTecnica.findAll"));
-        this.tblCarreras.setItems(listaCarreras);
-        this.colId.setCellValueFactory(cellId
-                -> cellId.getValue().codigoCarrera());
+        listaSalones = FXCollections.observableArrayList(
+                (List<Salon>) Conexion.getInstancia().findAll("Salon.findAll"));
+        this.tblSalones.setItems(listaSalones);
         this.colNombre.setCellValueFactory(cellNombre
-                -> cellNombre.getValue().nombre());
+                -> cellNombre.getValue().nombreSalon());
+        this.colDescripcion.setCellValueFactory(cellDescripcion
+                -> cellDescripcion.getValue().descripcion());
+        this.colCapacidad.setCellValueFactory(cellCapacidad
+                -> cellCapacidad.getValue().capacidad());
     }
 
     public void modificar() {
-        if (this.tblCarreras.getSelectionModel().getSelectedItem() == null) {
+        if (this.tblSalones.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Carreras Técnicas");
+            alert.setTitle("Salones");
             alert.setHeaderText(null);
             alert.setContentText("Debe seleccionar un registro");
             alert.initOwner(null);
             alert.show();
         } else {
-            CarreraTecnica carreraTecnica = this.tblCarreras.getSelectionModel().getSelectedItem();
-            this.directorEscena.mostrarVentanaCarreraTecnicaAddUpdate(carreraTecnica);
+            Salon salon = this.tblSalones.getSelectionModel().getSelectedItem();
+            this.directorEscena.mostrarVentanaSalonAddUpdate(salon);
         }
     }
 
     public void eliminar() {
-        if (this.tblCarreras.getSelectionModel().getSelectedItem() == null) {
+        if (this.tblSalones.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Carreras Técnicas");
+            alert.setTitle("Salones");
             alert.setHeaderText(null);
             alert.setContentText("Debe seleccionar un registro");
             alert.initOwner(null);
             alert.show();
         } else {
-            CarreraTecnica carreraTecnica = this.tblCarreras.getSelectionModel().getSelectedItem();
+            Salon salon = this.tblSalones.getSelectionModel().getSelectedItem();
             Alert alert = new Alert(AlertType.CONFIRMATION);
-            alert.setTitle("Carreras Técnicas");
+            alert.setTitle("Salones");
             alert.setHeaderText(null);
             alert.setContentText("¿Desea eliminar el registro?");
             alert.initOwner(null);
@@ -74,23 +79,23 @@ public class VentanaCarreraTecnicaController implements Initializable {
             Optional<ButtonType> seleccion = alert.showAndWait();
 
             if (seleccion.get() == ButtonType.OK) {
-                Conexion.getInstancia().eliminar(carreraTecnica);
+                Conexion.getInstancia().eliminar(salon);
                 Alert alert1 = new Alert(AlertType.INFORMATION);
-                alert1.setTitle("Carreras Técnicas");
+                alert1.setTitle("Salones");
                 alert1.setHeaderText(null);
                 alert1.setContentText("Registro eliminado correctamente");
                 alert1.initOwner(null);
                 alert1.show();
-                this.directorEscena.mostrarVentanaCarrera();
+                this.directorEscena.mostrarVentanaSalon();
             } else {
-                this.directorEscena.mostrarVentanaCarrera();
+                this.directorEscena.mostrarVentanaSalon();
             }
         }
     }
 
     public void salir() {
         Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle("Carreras Técnicas");
+        alert.setTitle("Salones");
         alert.setHeaderText(null);
         alert.setContentText("¿Desea salir de esta ventana?");
         alert.initOwner(null);
@@ -100,7 +105,7 @@ public class VentanaCarreraTecnicaController implements Initializable {
         if (seleccion.get() == ButtonType.OK) {
             this.directorEscena.mostrarVentanaPrincipal();
         } else {
-            this.directorEscena.mostrarVentanaCarrera();
+            this.directorEscena.mostrarVentanaSalon();
         }
     }
 
@@ -108,8 +113,8 @@ public class VentanaCarreraTecnicaController implements Initializable {
         this.directorEscena.mostrarVentanaPrincipal();
     }
 
-    public void mostrarVentanaCarreraTecnicaAddUpdate() {
-        this.directorEscena.mostrarVentanaCarreraTecnicaAddUpdate();
+    public void mostrarVentanaSalonAddUpdate() {
+        this.directorEscena.mostrarVentanaSalonAddUpdate();
     }
 
     public App getDirectorEscena() {
