@@ -18,7 +18,8 @@
                   <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaAlumno" text="Alumnos" />
                   <MenuItem mnemonicParsing="false" text="Módulos" />
                   <MenuItem mnemonicParsing="false" text="Seminarios" />
-                  <MenuItem mnemonicParsing="false" text="Clases" />
+                  <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaClase" text="Clases" />
+                  <MenuItem mnemonicParsing="false" text="Asignaciones" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Reportes">

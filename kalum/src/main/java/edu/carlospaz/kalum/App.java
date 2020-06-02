@@ -7,6 +7,8 @@ import edu.carlospaz.kalum.controllers.VentanaAlumnoAddUpdateController;
 import edu.carlospaz.kalum.controllers.VentanaAlumnoController;
 import edu.carlospaz.kalum.controllers.VentanaCarreraTecnicaAddUpdateController;
 import edu.carlospaz.kalum.controllers.VentanaCarreraTecnicaController;
+import edu.carlospaz.kalum.controllers.VentanaClaseAddUpdateController;
+import edu.carlospaz.kalum.controllers.VentanaClaseController;
 import edu.carlospaz.kalum.controllers.VentanaHorarioAddUpdateController;
 import edu.carlospaz.kalum.controllers.VentanaHorarioController;
 import edu.carlospaz.kalum.controllers.VentanaInstructorAddUpdateController;
@@ -16,6 +18,7 @@ import edu.carlospaz.kalum.controllers.VentanaSalonAddUpdateController;
 import edu.carlospaz.kalum.controllers.VentanaSalonController;
 import edu.carlospaz.kalum.models.Alumno;
 import edu.carlospaz.kalum.models.CarreraTecnica;
+import edu.carlospaz.kalum.models.Clase;
 import edu.carlospaz.kalum.models.Horario;
 import edu.carlospaz.kalum.models.Instructor;
 import edu.carlospaz.kalum.models.Salon;
@@ -223,6 +226,42 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+
+    public void mostrarVentanaClase() {
+        try {
+            VentanaClaseController ventanaClaseView 
+                    = (VentanaClaseController) cambiarEscena(
+                    "VentanaClaseView.fxml", 650, 400);
+                    ventanaClaseView.setDirectorEscena(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void mostrarVentanaClaseAddUpdate() {
+        try {
+            VentanaClaseAddUpdateController ventanaClaseAddUpdateView 
+                    = (VentanaClaseAddUpdateController) cambiarEscena(
+                    "VentanaClaseAddUpdateView.fxml", 650, 400);
+            ventanaClaseAddUpdateView.setDirectorEscena(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void mostrarVentanaClaseAddUpdate(Clase clase) {
+        try {
+            VentanaClaseAddUpdateController ventanaClaseAddUpdateView
+                    = (VentanaClaseAddUpdateController) cambiarEscena(
+                    "VentanaClaseAddUpdateView.fxml", 650, 400);
+            ventanaClaseAddUpdateView.setDirectorEscena(this);
+            ventanaClaseAddUpdateView.setClase(clase);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    
 
     public Initializable cambiarEscena(String escena, int ancho, int alto) throws IOException {
         Initializable resultado = null;

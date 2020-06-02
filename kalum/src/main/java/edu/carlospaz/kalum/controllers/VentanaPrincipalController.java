@@ -33,6 +33,10 @@ public class VentanaPrincipalController implements Initializable {
         this.directorEscena.mostrarVentanaAlumno();
     }
 
+    public void mostrarVentanaClase() {
+        this.directorEscena.mostrarVentanaClase();
+    }
+
     public App getDirectorEscena() {
         return directorEscena;
     }

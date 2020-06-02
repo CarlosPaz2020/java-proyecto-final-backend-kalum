@@ -12,7 +12,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -40,16 +39,18 @@ public class Clase implements Serializable {
         this.ciclo = new SimpleIntegerProperty();
         this.cupoMinimo = new SimpleIntegerProperty();
         this.cupoMaximo = new SimpleIntegerProperty();
+        this.salon = new Salon();
         this.cantidadAsignaciones = new SimpleIntegerProperty();
     }
 
     public Clase(String claseId, String descripcion, int ciclo, int cupoMinimo,
-                 int cupoMaximo, int cantidadAsignaciones) {
+                 int cupoMaximo, Salon salon, int cantidadAsignaciones) {
         this.claseId = new SimpleStringProperty();
         this.descripcion = new SimpleStringProperty();
         this.ciclo = new SimpleIntegerProperty();
         this.cupoMinimo = new SimpleIntegerProperty();
         this.cupoMaximo = new SimpleIntegerProperty();
+        this.salon = new Salon();
         this.cantidadAsignaciones = new SimpleIntegerProperty();
     }
 
