@@ -15,7 +15,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaInstructor" text="Instructores" />
                   <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaSalon" text="Salones" />
               <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaHorario" text="Horarios" />
-                  <MenuItem mnemonicParsing="false" text="Alumnos" />
+                  <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaAlumno" text="Alumnos" />
                   <MenuItem mnemonicParsing="false" text="Módulos" />
                   <MenuItem mnemonicParsing="false" text="Seminarios" />
                   <MenuItem mnemonicParsing="false" text="Clases" />

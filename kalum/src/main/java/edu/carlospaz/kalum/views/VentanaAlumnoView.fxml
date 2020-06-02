@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaAlumnoController">
+   <children>
+      <Label layoutX="10.0" layoutY="10.0" text="ALUMNOS" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Line endX="549.0" layoutX="100.0" layoutY="40.0" startX="-100.0" />
+      <TableView fx:id="tblAlumnos" layoutY="40.0" prefHeight="300.0" prefWidth="650.0">
+         <columns>
+            <TableColumn fx:id="colCarne" prefWidth="92.0" text="CARNÉ" />
+            <TableColumn fx:id="colNoExpediente" prefWidth="116.0" text="NO. EXPEDIENTE" />
+            <TableColumn fx:id="colApellidos" prefWidth="145.0" text="APELLIDOS" />
+            <TableColumn fx:id="colNombres" minWidth="0.0" prefWidth="137.0" text="NOMBRES" />
+            <TableColumn fx:id="colEmail" prefWidth="159.0" text="EMAIL" />
+         </columns>
+      </TableView>
+      <Button layoutX="22.0" layoutY="354.0" mnemonicParsing="false" onAction="#mostrarVentanaAlumnoAddUpdate" prefWidth="80.0" text="NUEVO" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="357.0" />
+      <Button layoutX="116.0" layoutY="354.0" mnemonicParsing="false" onAction="#modificar" prefWidth="80.0" text="MODIFICAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="357.0" />
+      <Button layoutX="220.0" layoutY="354.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="80.0" text="ELIMINAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="215.0" AnchorPane.topAnchor="357.0" />
+      <Button layoutX="570.0" layoutY="354.0" mnemonicParsing="false" onAction="#salir" prefWidth="80.0" text="SALIR" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="357.0" />
+   </children>
+</AnchorPane>

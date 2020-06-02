@@ -29,6 +29,10 @@ public class VentanaPrincipalController implements Initializable {
         this.directorEscena.mostrarVentanaHorario();
     }
 
+    public void mostrarVentanaAlumno() {
+        this.directorEscena.mostrarVentanaAlumno();
+    }
+
     public App getDirectorEscena() {
         return directorEscena;
     }
