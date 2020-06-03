@@ -145,7 +145,7 @@ public class Instructor implements Serializable {
         this.estatus.set(estatus);
     }
 
-    public StringProperty etatus() {
+    public StringProperty estatus() {
         return this.estatus;
     }
 

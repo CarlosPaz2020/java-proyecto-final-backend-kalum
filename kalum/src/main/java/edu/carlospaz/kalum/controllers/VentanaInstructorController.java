@@ -39,6 +39,9 @@ public class VentanaInstructorController implements Initializable {
     @FXML
     private TableColumn<Instructor, String> colEstatus;
 
+    @FXML
+    private TableColumn<Instructor, String> colFoto;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         listaInstructores = FXCollections.observableArrayList(
@@ -53,7 +56,9 @@ public class VentanaInstructorController implements Initializable {
     this.colTelefono.setCellValueFactory(cellTelefono
             -> cellTelefono.getValue().telefono());
     this.colEstatus.setCellValueFactory(cellEstatus
-            -> cellEstatus.getValue().etatus());
+            -> cellEstatus.getValue().estatus());
+    this.colFoto.setCellValueFactory(cellFoto
+            -> cellFoto.getValue().foto());
     }
 
     public void modificar() {

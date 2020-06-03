@@ -8,8 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaInstructorController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaInstructorController">
    <children>
       <Label layoutX="10.0" layoutY="10.0" text="INSTRUCTORES" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
@@ -17,13 +16,14 @@
          </font>
       </Label>
       <Line endX="549.0" layoutX="100.0" layoutY="40.0" startX="-100.0" />
-      <TableView fx:id="tblInstructores" layoutY="40.0" prefHeight="300.0" prefWidth="650.0">
+      <TableView fx:id="tblInstructores" layoutY="40.0" prefHeight="300.0" prefWidth="800.0">
          <columns>
             <TableColumn fx:id="colApellidos" prefWidth="131.0" text="APELLIDOS" />
             <TableColumn fx:id="colNombres" minWidth="0.0" prefWidth="127.0" text="NOMBRES" />
             <TableColumn fx:id="colDireccion" prefWidth="210.0" text="DIRECCIÓN" />
             <TableColumn fx:id="colTelefono" prefWidth="102.0" text="TELÉFONO" />
             <TableColumn fx:id="colEstatus" prefWidth="79.0" text="ESTATUS" />
+            <TableColumn fx:id="colFoto" prefWidth="149.0" text="FOTO" />
          </columns>
       </TableView>
       <Button layoutX="22.0" layoutY="354.0" mnemonicParsing="false" onAction="#mostrarVentanaInstructorAddUpdate" prefWidth="80.0" text="NUEVO" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="357.0" />

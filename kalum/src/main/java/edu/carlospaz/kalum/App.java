@@ -95,7 +95,7 @@ public class App extends Application {
         try {
             VentanaInstructorController ventanaInstructorView 
                     = (VentanaInstructorController) cambiarEscena(
-                    "VentanaInstructorView.fxml", 650, 400);
+                    "VentanaInstructorView.fxml", 800, 400);
             ventanaInstructorView.setDirectorEscena(this);
         } catch (IOException e) {
             e.printStackTrace();
