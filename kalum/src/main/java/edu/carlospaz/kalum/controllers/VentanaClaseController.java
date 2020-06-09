@@ -1,12 +1,15 @@
 package edu.carlospaz.kalum.controllers;
 
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import edu.carlospaz.kalum.App;
 import edu.carlospaz.kalum.db.Conexion;
 import edu.carlospaz.kalum.models.Clase;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -21,37 +24,44 @@ public class VentanaClaseController implements Initializable {
     private App directorEscena;
     private ObservableList<Clase> listaClases;
 
-    @FXML
-    private TableView<Clase> tblClases;
-
-    @FXML
-    private TableColumn<Clase, String> colDescripcion;
-
-    @FXML
-    private TableColumn<Clase, Number> colCiclo;
-
-    @FXML
-    private TableColumn<Clase, Number> colCupoMin;
-
-    @FXML
-    private TableColumn<Clase, Number> colCupoMax;
-
-    @FXML
-    private TableColumn<Clase, Number> colCantAsig;
+    @FXML private TableView<Clase> tblClases;
+    @FXML private TableColumn<Clase,String> colSalon;
+    @FXML private TableColumn<Clase,Number> colCiclo;
+    @FXML private TableColumn<Clase,String> colDescripcion;
+    @FXML private TableColumn<Clase,Number> colCupoMin;
+    @FXML private TableColumn<Clase,Number> colCupoMax;
+    @FXML private TableColumn<Clase,String> colHorario;
+    @FXML private TableColumn<Clase,String> colInstructor;
+    @FXML private TableColumn<Clase,String> colCarrera;
+    @FXML private TableColumn<Clase,Number> colCantAsig;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
         listaClases = FXCollections.observableArrayList(
             (List<Clase>) Conexion.getInstancia().findAll("Clase.findAll"));
     this.tblClases.setItems(listaClases);
-    this.colDescripcion.setCellValueFactory(cellDescripcion
-            -> cellDescripcion.getValue().descripcion());
+    
+    this.colSalon.setCellValueFactory(cellSalon
+            -> cellSalon.getValue().getSalon().nombreSalon());
     this.colCiclo.setCellValueFactory(cellCiclo
             -> cellCiclo.getValue().ciclo());
+    this.colDescripcion.setCellValueFactory(cellDescripcion
+            -> cellDescripcion.getValue().descripcion());
     this.colCupoMin.setCellValueFactory(cellCupoMin
             -> cellCupoMin.getValue().cupoMinimo());
     this.colCupoMax.setCellValueFactory(cellCupoMax
             -> cellCupoMax.getValue().cupoMaximo());
+    this.colHorario.setCellValueFactory(cellHorario
+            -> new ReadOnlyStringWrapper(
+                formatoHora.format(cellHorario.getValue().getHorario().getHorarioInicio()) + "-" +
+                formatoHora.format(cellHorario.getValue().getHorario().getHorarioFinal())));
+    this.colInstructor.setCellValueFactory(cellInstructor
+            -> new ReadOnlyStringWrapper(
+                cellInstructor.getValue().getInstructor().getApellidos() + ", " + 
+                cellInstructor.getValue().getInstructor().getNombres()));
+    this.colCarrera.setCellValueFactory(cellCarrera
+            -> cellCarrera.getValue().getCarrera().nombre());
     this.colCantAsig.setCellValueFactory(cellCantAsig
             -> cellCantAsig.getValue().cantidadAsignaciones());
     }

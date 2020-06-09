@@ -1,7 +1,9 @@
 package edu.carlospaz.kalum.controllers;
 
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -18,29 +20,29 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.beans.property.ReadOnlyStringWrapper;
 
 public class VentanaHorarioController implements Initializable {
     private App directorEscena;
     private ObservableList<Horario> listaHorarios;
 
-    @FXML
-    private TableView<Horario> tblHorarios;
-
-    @FXML
-    private TableColumn<Horario, Date> colHorarioInicio;
-
-    @FXML
-    private TableColumn<Horario, Date> colHorarioFinal;
+    @FXML private TableView<Horario> tblHorarios;
+    @FXML private TableColumn<Horario,String> colHorarioInicio;
+    @FXML private TableColumn<Horario,String> colHorarioFinal;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
         listaHorarios = FXCollections
                 .observableArrayList((List<Horario>) Conexion.getInstancia().findAll("Horario.findAll"));
         this.tblHorarios.setItems(listaHorarios);
-        this.colHorarioInicio.setCellValueFactory(cellHorarioInicio 
-            -> cellHorarioInicio.getValue().horarioInicio());
-        this.colHorarioFinal.setCellValueFactory(cellHorarioFinal 
-            -> cellHorarioFinal.getValue().horarioFinal());
+        
+        this.colHorarioInicio.setCellValueFactory(cellHorarioInicio
+            -> new ReadOnlyStringWrapper(
+                formatoHora.format(cellHorarioInicio.getValue().getHorarioInicio().toString())));
+        this.colHorarioFinal.setCellValueFactory(cellHorarioFinal
+                -> new ReadOnlyStringWrapper(
+                    formatoHora.format(cellHorarioFinal.getValue().getHorarioFinal().toString())));
     }
 
     public void modificar() throws ParseException {

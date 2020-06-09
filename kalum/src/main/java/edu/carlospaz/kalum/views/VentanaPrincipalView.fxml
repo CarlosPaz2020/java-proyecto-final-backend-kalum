@@ -15,11 +15,11 @@
                   <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaInstructor" text="Instructores" />
                   <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaSalon" text="Salones" />
               <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaHorario" text="Horarios" />
-                  <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaAlumno" text="Alumnos" />
-                  <MenuItem mnemonicParsing="false" text="Módulos" />
-                  <MenuItem mnemonicParsing="false" text="Seminarios" />
                   <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaClase" text="Clases" />
-                  <MenuItem mnemonicParsing="false" text="Asignaciones" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#mostrarVentanaAlumno" text="Alumnos" />
+                  <MenuItem disable="true" mnemonicParsing="false" text="Módulos" />
+                  <MenuItem disable="true" mnemonicParsing="false" text="Seminarios" />
+                  <MenuItem disable="true" mnemonicParsing="false" text="Asignaciones" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Reportes">

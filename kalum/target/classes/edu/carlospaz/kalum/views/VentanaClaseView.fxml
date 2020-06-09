@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaClaseController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaClaseController">
    <children>
       <Label layoutX="10.0" layoutY="10.0" text="CLASES" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
@@ -16,13 +16,17 @@
          </font>
       </Label>
       <Line endX="549.0" layoutX="100.0" layoutY="40.0" startX="-100.0" />
-      <TableView fx:id="tblClases" layoutY="40.0" prefHeight="300.0" prefWidth="650.0">
+      <TableView fx:id="tblClases" layoutY="40.0" prefHeight="300.0" prefWidth="900.0">
          <columns>
-            <TableColumn fx:id="colDescripcion" prefWidth="340.0" text="DESCRIPCIÓN" />
-            <TableColumn fx:id="colCiclo" minWidth="0.0" prefWidth="69.0" text="CICLO" />
-            <TableColumn fx:id="colCupoMin" prefWidth="68.0" text="CUPO MÍN." />
-            <TableColumn fx:id="colCupoMax" prefWidth="87.0" text="CUPO MÁX." />
-            <TableColumn fx:id="colCantAsig" prefWidth="85.0" text="CANT. ASIG." />
+            <TableColumn fx:id="colSalon" prefWidth="57.0" text="SALÓN" />
+            <TableColumn fx:id="colCiclo" minWidth="0.0" prefWidth="56.0" text="CICLO" />
+            <TableColumn fx:id="colDescripcion" prefWidth="179.0" text="DESCRIPCIÓN" />
+            <TableColumn fx:id="colCupoMin" prefWidth="65.0" text="CUP. MÍN." />
+            <TableColumn fx:id="colCupoMax" prefWidth="73.0" text="CUP. MÁX." />
+            <TableColumn fx:id="colHorario" prefWidth="108.0" text="HORARIO" />
+            <TableColumn fx:id="colInstructor" prefWidth="122.0" text="INSTRUCTOR" />
+            <TableColumn fx:id="colCarrera" prefWidth="130.0" text="CARRERA" />
+            <TableColumn fx:id="colCantAsig" prefWidth="109.0" text="CANT. ASIG." />
          </columns>
       </TableView>
       <Button layoutX="22.0" layoutY="354.0" mnemonicParsing="false" onAction="#mostrarVentanaClaseAddUpdate" prefWidth="80.0" text="NUEVO" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="357.0" />
