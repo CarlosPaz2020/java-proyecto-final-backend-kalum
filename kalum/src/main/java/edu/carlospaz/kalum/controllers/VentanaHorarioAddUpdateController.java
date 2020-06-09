@@ -127,8 +127,8 @@ public class VentanaHorarioAddUpdateController implements Initializable {
         this.horario = horario;
         DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
         formatoHora.setTimeZone(TimeZone.getTimeZone("CST"));
-        horario.setHorarioInicio(formatoHora.parse(txtHorarioInicio.getText()));
-        horario.setHorarioFinal(formatoHora.parse(txtHorarioFinal.getText()));
+        this.txtHorarioInicio.setText(formatoHora.format(horario.getHorarioInicio()));
+        this.txtHorarioFinal.setText(formatoHora.format(horario.getHorarioFinal()));
     }
 
     public App getDirectorEscena() {

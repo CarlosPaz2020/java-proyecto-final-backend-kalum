@@ -38,10 +38,10 @@ public class VentanaHorarioController implements Initializable {
         
         this.colHorarioInicio.setCellValueFactory(cellHorarioInicio
             -> new ReadOnlyStringWrapper(
-                formatoHora.format(cellHorarioInicio.getValue().getHorarioInicio().toString())));
+                formatoHora.format(cellHorarioInicio.getValue().getHorarioInicio()).toString()));
         this.colHorarioFinal.setCellValueFactory(cellHorarioFinal
                 -> new ReadOnlyStringWrapper(
-                    formatoHora.format(cellHorarioFinal.getValue().getHorarioFinal().toString())));
+                    formatoHora.format(cellHorarioFinal.getValue().getHorarioFinal()).toString()));
     }
 
     public void modificar() throws ParseException {
@@ -54,6 +54,7 @@ public class VentanaHorarioController implements Initializable {
             alert.show();
         } else {
             Horario horario = this.tblHorarios.getSelectionModel().getSelectedItem();
+            System.out.println(horario.getHorarioInicio() + "-" + horario.getHorarioFinal());
             this.directorEscena.mostrarVentanaHorarioAddUpdate(horario);
         }
     }

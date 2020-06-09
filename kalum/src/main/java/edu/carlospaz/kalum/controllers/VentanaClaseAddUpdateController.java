@@ -22,33 +22,15 @@ public class VentanaClaseAddUpdateController implements Initializable {
     private App directorEscena;
     private Clase clase;
 
-
-    @FXML
-    private TextField txtDescripcion;
-
-    @FXML
-    private TextField txtCiclo;
-
-    @FXML
-    private TextField txtCupoMin;
-
-    @FXML
-    private TextField txtCupoMax;
-
-    @FXML
-    private TextField txtSalonId;
-
-    @FXML
-    private TextField txtHorarioId;
-
-    @FXML
-    private TextField txtInstructorId;
-
-    @FXML
-    private TextField txtCarreraId;
-
-    @FXML
-    private TextField txtCantAsig;
+    @FXML private TextField txtDescripcion;
+    @FXML private TextField txtCiclo;
+    @FXML private TextField txtCupoMin;
+    @FXML private TextField txtCupoMax;
+    @FXML private TextField txtSalonId;
+    @FXML private TextField txtHorarioId;
+    @FXML private TextField txtInstructorId;
+    @FXML private TextField txtCarreraId;
+    @FXML private TextField txtCantAsig;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
