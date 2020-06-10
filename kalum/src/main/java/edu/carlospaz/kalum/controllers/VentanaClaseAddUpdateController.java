@@ -1,6 +1,7 @@
 package edu.carlospaz.kalum.controllers;
 
 import java.net.URL;
+import java.text.ParseException;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.UUID;
@@ -161,7 +162,7 @@ public class VentanaClaseAddUpdateController implements Initializable {
         return clase;
     }
 
-    public void setClase(Clase clase) {
+    public void setClase(Clase clase) throws ParseException {
         this.clase = clase;
         this.txtDescripcion.setText(clase.getDescripcion());
         this.txtCiclo.setText(String.valueOf(clase.getCiclo()));

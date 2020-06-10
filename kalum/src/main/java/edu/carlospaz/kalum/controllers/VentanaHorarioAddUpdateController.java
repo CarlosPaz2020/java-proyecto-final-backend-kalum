@@ -22,11 +22,8 @@ public class VentanaHorarioAddUpdateController implements Initializable {
     private App directorEscena;
     private Horario horario;
 
-    @FXML
-    private TextField txtHorarioInicio;
-
-    @FXML
-    private TextField txtHorarioFinal;
+    @FXML private TextField txtHorarioInicio;
+    @FXML private TextField txtHorarioFinal;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

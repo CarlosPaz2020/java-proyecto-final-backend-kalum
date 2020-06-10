@@ -249,7 +249,7 @@ public class App extends Application {
         }
     }
 
-    public void mostrarVentanaClaseAddUpdate(Clase clase) {
+    public void mostrarVentanaClaseAddUpdate(Clase clase) throws ParseException {
         try {
             VentanaClaseAddUpdateController ventanaClaseAddUpdateView
                     = (VentanaClaseAddUpdateController) cambiarEscena(

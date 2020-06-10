@@ -2,6 +2,7 @@ package edu.carlospaz.kalum.controllers;
 
 import java.net.URL;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
@@ -56,17 +57,17 @@ public class VentanaClaseController implements Initializable {
             -> new ReadOnlyStringWrapper(
                 formatoHora.format(cellHorario.getValue().getHorario().getHorarioInicio()) + "-" +
                 formatoHora.format(cellHorario.getValue().getHorario().getHorarioFinal())));
-    // this.colInstructor.setCellValueFactory(cellInstructor
-    //         -> new ReadOnlyStringWrapper(
-    //             cellInstructor.getValue().getInstructor().getApellidos() + ", " + 
-    //             cellInstructor.getValue().getInstructor().getNombres()));
+    this.colInstructor.setCellValueFactory(cellInstructor
+            -> new ReadOnlyStringWrapper(
+                cellInstructor.getValue().getInstructor().getApellidos() + ", " + 
+                cellInstructor.getValue().getInstructor().getNombres()));
     this.colCarrera.setCellValueFactory(cellCarrera
             -> cellCarrera.getValue().getCarrera().nombre());
     this.colCantAsig.setCellValueFactory(cellCantAsig
             -> cellCantAsig.getValue().cantidadAsignaciones());
     }
 
-    public void modificar() {
+    public void modificar() throws ParseException {
         if (this.tblClases.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Clases");
