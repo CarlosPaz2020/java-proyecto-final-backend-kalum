@@ -84,7 +84,7 @@ public class CarreraTecnica implements Serializable {
     //
     @Override
     public String toString() {
-        return this.getCodigoCarrera() + " " + this.getNombre();
+        return this.getNombre();
     }
 
     private static final long serialVersionUID = 1L;

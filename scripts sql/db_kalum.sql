@@ -90,7 +90,8 @@ numero_seminarios int(11) not null,
 constraint fk_carrera foreign key(carrera_id) references carrera_tecnica(codigo_carrera)
 )engine = innodb;
 
-
+insert into modulo values(uuid(), 'Desarrollador Backend', '2108b79c-98b7-11ea-a628-00ffcfd80124', 5);
+insert into modulo values(uuid(), 'Desarrollador Frontend', '2108b79c-98b7-11ea-a628-00ffcfd80124', 5);
 
 ------------------------------------------------------------------
 create table seminario(
@@ -102,8 +103,8 @@ modulo_id varchar(128) not null,
 constraint fk_modulo foreign key(modulo_id) references modulo(modulo_id)
 )engine = innodb;
 
-
-
+insert into seminario values(uuid(), 'Seminario backend', '2020-02-01', '2020-06-30', '154d2b91-aba1-11ea-88c9-00ffcfd80124');
+insert into seminario values(uuid(), 'Seminario frontend', '2020-07-01', '2020-11-30', '154ecd83-aba1-11ea-88c9-00ffcfd80124');
 ------------------------------------------------------------------
 create table detalle_actividad(
 detalle_actividad_id varchar(128) primary key not null,

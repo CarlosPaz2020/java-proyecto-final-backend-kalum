@@ -176,9 +176,7 @@ public class Instructor implements Serializable {
     //
     @Override
     public String toString() {
-        return this.getInstructorId() + " " + this.getApellidos() + " " + this.getNombres() + " " + this.getDireccion()
-                + " " + this.getTelefono() + " " + this.getComentario() + " " + this.getEstatus() + " "
-                + this.getFoto();
+        return this.getNombres() + " " + this.getApellidos()  ;
     }
 
     private static final long serialVersionUID = 1L;

@@ -109,8 +109,7 @@ public class Salon implements Serializable {
     //
     @Override
     public String toString() {
-        return this.getSalonId() + " " + this.getNombreSalon()
-                + " " + this.getDescripcion() + " " + this.getCapacidad();
+        return this.getNombreSalon();
     }
 
     private static final long serialVersionUID = 1L;
