@@ -15,6 +15,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+
 @Entity
 @Table(name = "salon")
 @NamedQueries({@NamedQuery(name = "Salon.findAll", query = "select s from Salon s")})
@@ -53,7 +54,6 @@ public class Salon implements Serializable {
     public StringProperty salonId() {
         return this.salonId;
     }
-
     //
     @Column(name = "nombre_salon")
     public String getNombreSalon() {
@@ -67,7 +67,6 @@ public class Salon implements Serializable {
     public StringProperty nombreSalon() {
         return this.nombreSalon;
     }
-
     //
     @Column(name = "descripcion")
     public String getDescripcion() {
@@ -81,7 +80,6 @@ public class Salon implements Serializable {
     public StringProperty descripcion() {
         return this.descripcion;
     }
-
     //
     @Column(name = "capacidad")
     public int getCapacidad() {

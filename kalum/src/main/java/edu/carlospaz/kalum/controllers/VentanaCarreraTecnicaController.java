@@ -17,18 +17,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
+
 public class VentanaCarreraTecnicaController implements Initializable {
     private App directorEscena;
     private ObservableList<CarreraTecnica> listaCarreras;
     
-    @FXML
-    private TableView<CarreraTecnica> tblCarreras;
-
-    @FXML
-    private TableColumn<CarreraTecnica, String> colId;
-
-    @FXML
-    private TableColumn<CarreraTecnica, String> colNombre;
+    @FXML private TableView<CarreraTecnica> tblCarreras;
+    @FXML private TableColumn<CarreraTecnica, String> colId;
+    @FXML private TableColumn<CarreraTecnica, String> colNombre;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -119,6 +115,4 @@ public class VentanaCarreraTecnicaController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-    
-    
 }

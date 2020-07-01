@@ -7,19 +7,19 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaHorarioAddUpdateController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaHorarioAddUpdateController">
    <children>
-      <Label layoutX="10.0" layoutY="10.0" text="HORARIOS" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <Label layoutX="10.0" layoutY="10.0" styleClass="titulos" text="HORARIOS" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Line endX="549.0" layoutX="100.0" layoutY="40.0" startX="-100.0" />
-      <Label layoutX="13.0" layoutY="61.0" text="HORARIO INICIO:" AnchorPane.bottomAnchor="322.0" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="60.0" />
-      <Label layoutX="13.0" layoutY="112.0" text="HORARIO FINAL:" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="100.0" />
-      <TextField fx:id="txtHorarioInicio" layoutX="81.0" layoutY="57.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="57.0" />
-      <TextField fx:id="txtHorarioFinal" layoutX="81.0" layoutY="96.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="115.0" />
-      <Button layoutX="32.0" layoutY="367.0" mnemonicParsing="false" onAction="#guardar" prefWidth="80.0" text="GUARDAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="126.0" layoutY="367.0" mnemonicParsing="false" onAction="#cancelar" prefWidth="80.0" text="CANCELAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="357.0" />
+      <Label layoutX="19.0" layoutY="109.0" text="HORARIO INICIO:" />
+      <Label layoutX="23.0" layoutY="188.0" text="HORARIO FINAL:" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="188.0" />
+      <TextField fx:id="txtHorarioInicio" layoutX="142.0" layoutY="104.0" prefHeight="25.0" prefWidth="219.0" AnchorPane.leftAnchor="142.0" AnchorPane.topAnchor="104.0" />
+      <TextField fx:id="txtHorarioFinal" layoutX="138.0" layoutY="184.0" prefHeight="25.0" prefWidth="219.0" AnchorPane.leftAnchor="142.0" />
+      <Button layoutX="26.0" layoutY="556.0" mnemonicParsing="false" onAction="#guardar" prefWidth="80.0" text="GUARDAR" />
+      <Button layoutX="131.0" layoutY="556.0" mnemonicParsing="false" onAction="#cancelar" prefWidth="80.0" text="CANCELAR" />
    </children>
 </AnchorPane>

@@ -16,6 +16,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+
 @Entity
 @Table(name = "asignacion_alumno")
 @NamedQueries({@NamedQuery(name = "AsignacionAlumno.findAll", query = "select aa from AsignacionAlumno aa")})
@@ -50,7 +51,6 @@ public class AsignacionAlumno implements Serializable {
     public StringProperty asignacionId() {
         return this.asignacionId;
     }
-
     //
     @Column(name = "fecha_asignacion")
     public Date getFechaAsignacion() {

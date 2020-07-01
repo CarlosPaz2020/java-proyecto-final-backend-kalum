@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+
 @Entity
 @Table(name = "carrera_tecnica")
 @NamedQueries({@NamedQuery(name = "CarreraTecnica.findAll", query = "select ct from CarreraTecnica ct")})
@@ -46,7 +47,6 @@ public class CarreraTecnica implements Serializable {
     public StringProperty codigoCarrera() {
         return this.codigoCarrera;
     }
-
     //
     @Column(name = "nombre")
     public String getNombre() {

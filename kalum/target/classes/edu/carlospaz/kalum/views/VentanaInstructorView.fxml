@@ -8,27 +8,27 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaInstructorController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaInstructorController">
    <children>
-      <Label layoutX="10.0" layoutY="10.0" text="INSTRUCTORES" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <Label layoutX="10.0" layoutY="10.0" styleClass="titulos" text="INSTRUCTORES" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Line endX="549.0" layoutX="100.0" layoutY="40.0" startX="-100.0" />
-      <TableView fx:id="tblInstructores" layoutY="40.0" prefHeight="300.0" prefWidth="800.0">
+      <TableView fx:id="tblInstructores" layoutY="40.0" prefHeight="450.0" prefWidth="1000.0">
          <columns>
-            <TableColumn fx:id="colApellidos" prefWidth="131.0" text="APELLIDOS" />
-            <TableColumn fx:id="colNombres" minWidth="0.0" prefWidth="127.0" text="NOMBRES" />
-            <TableColumn fx:id="colDireccion" prefWidth="210.0" text="DIRECCIÓN" />
-            <TableColumn fx:id="colTelefono" prefWidth="102.0" text="TELÉFONO" />
-            <TableColumn fx:id="colEstatus" prefWidth="79.0" text="ESTATUS" />
-            <TableColumn fx:id="colFoto" prefWidth="149.0" text="FOTO" />
+            <TableColumn fx:id="colNombres" minWidth="0.0" prefWidth="149.0" text="NOMBRES" />
+            <TableColumn fx:id="colApellidos" prefWidth="143.0" text="APELLIDOS" />
+            <TableColumn fx:id="colDireccion" prefWidth="244.66665649414062" text="DIRECCIÓN" />
+            <TableColumn fx:id="colTelefono" prefWidth="190.0" text="TELÉFONO" />
+            <TableColumn fx:id="colEstatus" prefWidth="77.0" text="ESTATUS" />
+            <TableColumn fx:id="colFoto" prefWidth="193.66668701171875" text="FOTO" />
          </columns>
       </TableView>
-      <Button layoutX="22.0" layoutY="354.0" mnemonicParsing="false" onAction="#mostrarVentanaInstructorAddUpdate" prefWidth="80.0" text="NUEVO" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="116.0" layoutY="354.0" mnemonicParsing="false" onAction="#modificar" prefWidth="80.0" text="MODIFICAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="220.0" layoutY="354.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="80.0" text="ELIMINAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="215.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="570.0" layoutY="354.0" mnemonicParsing="false" onAction="#salir" prefWidth="80.0" text="SALIR" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="357.0" />
+      <Button layoutX="26.0" layoutY="555.0" mnemonicParsing="false" onAction="#mostrarVentanaInstructorAddUpdate" prefWidth="80.0" text="NUEVO" />
+      <Button layoutX="128.0" layoutY="554.0" mnemonicParsing="false" onAction="#modificar" prefWidth="80.0" text="MODIFICAR" />
+      <Button layoutX="232.0" layoutY="554.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="80.0" text="ELIMINAR" />
+      <Button layoutX="338.0" layoutY="553.0" mnemonicParsing="false" onAction="#salir" prefWidth="80.0" text="SALIR" />
    </children>
 </AnchorPane>

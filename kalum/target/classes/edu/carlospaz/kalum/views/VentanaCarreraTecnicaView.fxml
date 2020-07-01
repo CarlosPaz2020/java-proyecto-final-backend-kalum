@@ -8,23 +8,23 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaCarreraTecnicaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaCarreraTecnicaController">
    <children>
-      <Label text="CARRERAS TÉCNICAS" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <Label styleClass="titulos" text="CARRERAS TÉCNICAS" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Line endX="549.0" layoutX="100.0" layoutY="40.0" startX="-100.0" />
-      <TableView fx:id="tblCarreras" layoutY="40.0" prefHeight="300.0" prefWidth="650.0">
+      <TableView fx:id="tblCarreras" layoutY="40.0" prefHeight="450.0" prefWidth="1000.0">
         <columns>
-          <TableColumn fx:id="colId" prefWidth="281.0" text="ID" />
-          <TableColumn fx:id="colNombre" minWidth="0.0" prefWidth="368.0" text="NOMBRE" />
+          <TableColumn fx:id="colId" prefWidth="427.66668701171875" text="ID" />
+          <TableColumn fx:id="colNombre" minWidth="0.0" prefWidth="572.3333129882812" text="NOMBRE" />
         </columns>
       </TableView>
-      <Button layoutX="22.0" layoutY="357.0" mnemonicParsing="false" onAction="#mostrarVentanaCarreraTecnicaAddUpdate" prefWidth="80.0" text="NUEVO" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="116.0" layoutY="357.0" mnemonicParsing="false" onAction="#modificar" prefWidth="80.0" text="MODIFICAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="220.0" layoutY="357.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="80.0" text="ELIMINAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="215.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="570.0" layoutY="357.0" mnemonicParsing="false" onAction="#salir" prefWidth="80.0" text="SALIR" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="15.0" />
+      <Button layoutX="40.0" layoutY="546.0" mnemonicParsing="false" onAction="#mostrarVentanaCarreraTecnicaAddUpdate" prefHeight="25.0" prefWidth="80.0" text="NUEVO" />
+      <Button layoutX="154.0" layoutY="546.0" mnemonicParsing="false" onAction="#modificar" prefHeight="25.0" prefWidth="80.0" text="MODIFICAR" />
+      <Button layoutX="270.0" layoutY="546.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="25.0" prefWidth="80.0" text="ELIMINAR" />
+      <Button layoutX="391.0" layoutY="546.0" mnemonicParsing="false" onAction="#salir" prefHeight="25.0" prefWidth="80.0" text="SALIR" />
    </children>
 </AnchorPane>

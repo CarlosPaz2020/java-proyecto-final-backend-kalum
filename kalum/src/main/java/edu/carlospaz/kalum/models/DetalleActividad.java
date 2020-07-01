@@ -15,11 +15,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
 
 @Entity
 @Table(name = "detalle_actividad")
@@ -71,7 +71,6 @@ public class DetalleActividad implements Serializable {
     public StringProperty detalleActividadId() {
         return this.detalleActividadId;
     }
-
     //
     @Column(name = "nombre_actividad")
     public String getNombreActividad() {
@@ -85,7 +84,6 @@ public class DetalleActividad implements Serializable {
     public StringProperty nombreActividad() {
         return this.nombreActividad;
     }
-
     //
     @Column(name = "nota_actividad")
     public String getNotaActividad() {
@@ -99,7 +97,6 @@ public class DetalleActividad implements Serializable {
     public StringProperty notaActividad() {
         return this.notaActividad;
     }
-
     //
     @Temporal(value = TemporalType.DATE)
     @Column(name = "fecha_creacion")
@@ -114,7 +111,6 @@ public class DetalleActividad implements Serializable {
     public ObjectProperty<Date> fechaCreacion() {
         return this.fechaCreacion;
     }
-
     //
     @Temporal(value = TemporalType.DATE)
     @Column(name = "fecha_entrega")
@@ -129,7 +125,6 @@ public class DetalleActividad implements Serializable {
     public ObjectProperty<Date> fechaEntrega() {
         return this.fechaEntrega;
     }
-
     //
     @Temporal(value = TemporalType.DATE)
     @Column(name = "fecha_postergacion")
@@ -144,7 +139,6 @@ public class DetalleActividad implements Serializable {
     public ObjectProperty<Date> fechaPostergacion() {
         return this.fechaPostergacion;
     }
-
     //
     @Column(name = "estado")
     public String getEstado() {

@@ -17,30 +17,18 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXML;
 
+
 public class VentanaInstructorController implements Initializable {
     private App directorEscena;
     private ObservableList<Instructor> listaInstructores;
 
-    @FXML
-    private TableView<Instructor> tblInstructores;
-
-    @FXML
-    private TableColumn<Instructor, String> colApellidos;
-
-    @FXML
-    private TableColumn<Instructor, String> colNombres;
-
-    @FXML
-    private TableColumn<Instructor, String> colDireccion;
-
-    @FXML
-    private TableColumn<Instructor, String> colTelefono;
-
-    @FXML
-    private TableColumn<Instructor, String> colEstatus;
-
-    @FXML
-    private TableColumn<Instructor, String> colFoto;
+    @FXML private TableView<Instructor> tblInstructores;
+    @FXML private TableColumn<Instructor, String> colApellidos;
+    @FXML private TableColumn<Instructor, String> colNombres;
+    @FXML private TableColumn<Instructor, String> colDireccion;
+    @FXML private TableColumn<Instructor, String> colTelefono;
+    @FXML private TableColumn<Instructor, String> colEstatus;
+    @FXML private TableColumn<Instructor, String> colFoto;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -139,7 +127,4 @@ public class VentanaInstructorController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-
-    
- 
 }

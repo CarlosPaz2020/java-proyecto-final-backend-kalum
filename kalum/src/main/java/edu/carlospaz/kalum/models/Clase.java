@@ -17,6 +17,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+
 @Entity
 @Table(name = "clase")
 @NamedQueries({@NamedQuery(name = "Clase.findAll", query = "select c from Clase c")})
@@ -68,7 +69,6 @@ public class Clase implements Serializable {
     public StringProperty claseId() {
         return this.claseId;
     }
-
     //
     @Column(name = "descripcion")
     public String getDescripcion() {
@@ -82,7 +82,6 @@ public class Clase implements Serializable {
     public StringProperty descripcion() {
         return this.descripcion;
     }
-
     //
     @Column(name = "ciclo")
     public int getCiclo() {
@@ -96,7 +95,6 @@ public class Clase implements Serializable {
     public IntegerProperty ciclo() {
         return this.ciclo;
     }
-
     //
     @Column(name = "cupo_minimo")
     public int getCupoMinimo() {
@@ -110,7 +108,6 @@ public class Clase implements Serializable {
     public IntegerProperty cupoMinimo() {
         return this.cupoMinimo;
     }
-
     //
     @Column(name = "cupo_maximo")
     public int getCupoMaximo() {

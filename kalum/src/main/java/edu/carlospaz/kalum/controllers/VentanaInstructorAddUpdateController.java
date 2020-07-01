@@ -21,43 +21,30 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
+
 public class VentanaInstructorAddUpdateController implements Initializable {
     private App directorEscena;
     private Instructor instructor;
 
-    @FXML
-    private TextField txtApellidos;
-
-    @FXML
-    private TextField txtNombres;
-
-    @FXML
-    private TextField txtDireccion;
-
-    @FXML
-    private TextField txtTelefono;
-
-    @FXML
-    private TextArea txtaComentario;
-
-    @FXML
-    private TextField txtEstatus;
-
-    @FXML
-    private ImageView imgFoto;
+    @FXML private TextField txtApellidos;
+    @FXML private TextField txtNombres;
+    @FXML private TextField txtDireccion;
+    @FXML private TextField txtTelefono;
+    @FXML private TextArea txtaComentario;
+    @FXML private TextField txtEstatus;
+    @FXML private ImageView imgFoto;
+    @FXML private TextField txtUrlFoto;
 
     String imagepath = null;
-
     Image image = null;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     public void guardar() {
-        if (txtApellidos.getText().isEmpty()
-            || txtNombres.getText().isEmpty()
+        if (txtNombres.getText().isEmpty()
+            || txtApellidos.getText().isEmpty()
             || txtDireccion.getText().isEmpty()
             || txtTelefono.getText().isEmpty()
             || txtaComentario.getText().isEmpty()
@@ -68,7 +55,7 @@ public class VentanaInstructorAddUpdateController implements Initializable {
             alert.setContentText("Por favor, debe llenar los campos");
             alert.initOwner(null);
             alert.show();
-            this.txtApellidos.requestFocus();
+            this.txtNombres.requestFocus();
         } else {
             if (instructor != null) {
                 Alert alert2 = new Alert(AlertType.CONFIRMATION);
@@ -86,8 +73,13 @@ public class VentanaInstructorAddUpdateController implements Initializable {
                     instructor.setTelefono(txtTelefono.getText());
                     instructor.setComentario(txtaComentario.getText());
                     instructor.setEstatus(txtEstatus.getText());
-                    instructor.setFoto(imagepath);
+                    instructor.setFoto(txtUrlFoto.getText());
+                    System.out.println("Antes de modificar: " + txtUrlFoto.getText());
+                    System.out.println("Antes de modificar: " + instructor.getFoto());
                     Conexion.getInstancia().modificar(instructor);
+                    System.out.println("Después de modificar: " +txtUrlFoto.getText());
+                    System.out.println("Después de modificar: " +instructor.getFoto());
+
                     Alert alert = new Alert(AlertType.INFORMATION);
                     alert.setTitle("Instructores");
                     alert.setHeaderText(null);
@@ -96,7 +88,7 @@ public class VentanaInstructorAddUpdateController implements Initializable {
                     alert.show();
                     this.directorEscena.mostrarVentanaInstructor();
                 } else {
-                    this.txtApellidos.requestFocus();
+                    this.txtNombres.requestFocus();
                 }
                 
             } else {
@@ -108,7 +100,9 @@ public class VentanaInstructorAddUpdateController implements Initializable {
                 instructor.setTelefono(txtTelefono.getText());
                 instructor.setComentario(txtaComentario.getText());
                 instructor.setEstatus(txtEstatus.getText());
-                instructor.setFoto(imagepath);
+                instructor.setFoto(txtUrlFoto.getText());
+                System.out.println("Antes de guardar: " + txtUrlFoto.getText());
+                System.out.println("Antes de guardar: " + instructor.getFoto());
 
                 Alert alert = new Alert(AlertType.CONFIRMATION);
                 alert.setTitle("Instructores");
@@ -120,6 +114,8 @@ public class VentanaInstructorAddUpdateController implements Initializable {
 
                 if (seleccion.get() == ButtonType.OK) {
                     Conexion.getInstancia().agregar(instructor);
+                    System.out.println("Después de guardar: " + txtUrlFoto.getText());
+                    System.out.println("Después de guardar: " + instructor.getFoto());
                     Alert alert1 = new Alert(AlertType.INFORMATION);
                     alert1.setTitle("Instructores");
                     alert1.setHeaderText(null);
@@ -128,9 +124,8 @@ public class VentanaInstructorAddUpdateController implements Initializable {
                     alert1.show();
                     this.directorEscena.mostrarVentanaInstructor();
                 } else {
-                    this.txtApellidos.requestFocus();
+                    this.txtNombres.requestFocus();
                 }
-
             }
         }
     }
@@ -147,45 +142,30 @@ public class VentanaInstructorAddUpdateController implements Initializable {
         if (seleccion.get() == ButtonType.OK) {
             this.directorEscena.mostrarVentanaInstructor();
         } else {
-            this.txtApellidos.requestFocus();
+            this.txtNombres.requestFocus();
         }
     }
 
-    // @FXML
-    // private void elegirFoto(){
-    //     FileChooser fileChooser = new FileChooser();
-    //     File file = fileChooser.showOpenDialog(null);
-    //         if (file != null) {
-    //    //TODO
-    // }
-
-    // }
-
-    //@FXML
-    //ImageView imageView;
-
     public void elegirFoto(ActionEvent actionEvent){
         FileChooser chooser = new FileChooser();
-        chooser.setTitle("Open File");
+        chooser.setTitle("Abrir archivo");
         File file = chooser.showOpenDialog(new Stage());
         
         if(file != null) {
-            //String imagepath = file.getAbsolutePath();
             imagepath = file.toURI().toString();
-            System.out.println("file:"+imagepath);
+            System.out.println("Elegir foto toURI: " + imagepath);
+            txtUrlFoto.setText(imagepath);
             image = new Image(imagepath);
             imgFoto.setFitHeight(150);
             imgFoto.setFitWidth(150);
             imgFoto.setImage(image);
         } else{
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText("Please Select a File");
-            /*alert.setContentText("You didn't select a file!");*/
+            alert.setTitle("Selección de foto");
+            alert.setHeaderText("No seleccionó ninguna foto");
             alert.showAndWait();
         }
     }
-
 
     public Instructor getInstructor() {
         return instructor;
@@ -199,7 +179,9 @@ public class VentanaInstructorAddUpdateController implements Initializable {
         this.txtTelefono.setText(instructor.getTelefono());
         this.txtaComentario.setText(instructor.getComentario());
         this.txtEstatus.setText(instructor.getEstatus());
-        //this.imgFoto.setImage(instructor.getFoto());
+        this.imgFoto.setImage(new Image(instructor.getFoto()));
+        this.txtUrlFoto.setText(instructor.getFoto());
+        System.out.println("setInstructor toURI: " + instructor.getFoto());
     }
 
     public App getDirectorEscena() {
@@ -209,5 +191,4 @@ public class VentanaInstructorAddUpdateController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-
 }

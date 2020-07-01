@@ -5,11 +5,11 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaPrincipalController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaPrincipalController">
    <children>
       <MenuBar prefHeight="25.0" prefWidth="650.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Catálogos">
+          <Menu mnemonicParsing="false" text="Catálogo">
             <items>
                   <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaCarrera" text="Carreras Técnicas" />
                   <MenuItem mnemonicParsing="false" onAction="#mostrarVentanaInstructor" text="Instructores" />
@@ -22,14 +22,9 @@
                   <MenuItem disable="true" mnemonicParsing="false" text="Asignaciones" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Reportes">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
           <Menu mnemonicParsing="false" text="Salir">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
             </items>
           </Menu>
         </menus>

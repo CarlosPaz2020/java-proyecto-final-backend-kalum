@@ -144,10 +144,10 @@ horario_id varchar(128) not null,
 instructor_id varchar(128) not null,
 carrera_id varchar(128) not null,
 cantidad_asignaciones int default 0,
-constraint fk_salon foreign key(salon_id) references salon(salon_id),
-constraint fk_horario foreign key(horario_id) references horario(horario_id),
-constraint fk_instructor foreign key(instructor_id) references instructor(instructor_id),
-constraint fk_carrera_id foreign key(carrera_id) references carrera_tecnica(codigo_carrera)
+constraint fk_salon foreign key(salon_id) references salon(salon_id) ON DELETE CASCADE ON UPDATE CASCADE,
+constraint fk_horario foreign key(horario_id) references horario(horario_id) ON DELETE CASCADE ON UPDATE CASCADE,
+constraint fk_instructor foreign key(instructor_id) references instructor(instructor_id) ON DELETE CASCADE ON UPDATE CASCADE,
+constraint fk_carrera_id foreign key(carrera_id) references carrera_tecnica(codigo_carrera) ON DELETE CASCADE ON UPDATE CASCADE
 )engine = innodb;
 
 -- CLASE 1

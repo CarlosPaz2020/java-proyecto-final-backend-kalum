@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+
 @Entity
 @Table(name = "instructor")
 @NamedQueries({ @NamedQuery(name = "Instructor.findAll", query = "select i from Instructor i") })
@@ -64,7 +65,6 @@ public class Instructor implements Serializable {
     public StringProperty instructorId() {
         return this.instructorId;
     }
-
     //
     @Column(name = "apellidos")
     public String getApellidos() {
@@ -78,7 +78,6 @@ public class Instructor implements Serializable {
     public StringProperty apellidos() {
         return this.apellidos;
     }
-
     //
     @Column(name = "nombres")
     public String getNombres() {
@@ -92,7 +91,6 @@ public class Instructor implements Serializable {
     public StringProperty nombres() {
         return this.nombres;
     }
-
     //
     @Column(name = "direccion")
     public String getDireccion() {
@@ -106,7 +104,6 @@ public class Instructor implements Serializable {
     public StringProperty direccion() {
         return this.direccion;
     }
-
     //
     @Column(name = "telefono")
     public String getTelefono() {
@@ -120,7 +117,6 @@ public class Instructor implements Serializable {
     public StringProperty telefono() {
         return this.telefono;
     }
-
     //
     @Column(name = "comentario")
     public String getComentario() {
@@ -134,7 +130,6 @@ public class Instructor implements Serializable {
     public StringProperty comentario() {
         return this.comentario;
     }
-
     //
     @Column(name = "estatus")
     public String getEstatus() {
@@ -148,7 +143,6 @@ public class Instructor implements Serializable {
     public StringProperty estatus() {
         return this.estatus;
     }
-
     //
     @Column(name = "foto")
     public String getFoto() {

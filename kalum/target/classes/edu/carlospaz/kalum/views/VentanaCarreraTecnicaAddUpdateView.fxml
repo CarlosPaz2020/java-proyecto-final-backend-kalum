@@ -7,17 +7,17 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaCarreraTecnicaAddUpdateController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaCarreraTecnicaAddUpdateController">
    <children>
-      <Label text="CARRERAS TÉCNICAS" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <Label styleClass="titulos" text="CARRERAS TÉCNICAS" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Line endX="549.0" layoutX="100.0" layoutY="40.0" startX="-100.0" />
-      <TextField fx:id="txtNombre" layoutX="77.0" layoutY="81.0" prefHeight="25.0" prefWidth="350.0" />
-      <Button layoutX="22.0" layoutY="357.0" mnemonicParsing="false" onAction="#guardar" prefWidth="80.0" text="GUARDAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="116.0" layoutY="357.0" mnemonicParsing="false" onAction="#cancelar" prefWidth="80.0" text="CANCELAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="115.0" />
+      <TextField fx:id="txtNombre" layoutX="77.0" layoutY="81.0" prefHeight="25.0" prefWidth="575.0" />
+      <Button layoutX="35.0" layoutY="556.0" mnemonicParsing="false" onAction="#guardar" prefWidth="80.0" text="GUARDAR" />
+      <Button layoutX="146.0" layoutY="556.0" mnemonicParsing="false" onAction="#cancelar" prefWidth="80.0" text="CANCELAR" />
       <Label layoutX="15.0" layoutY="85.0" text="NOMBRE:" />
    </children>
 </AnchorPane>

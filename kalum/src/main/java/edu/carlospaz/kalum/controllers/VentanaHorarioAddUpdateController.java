@@ -18,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXML;
 
+
 public class VentanaHorarioAddUpdateController implements Initializable {
     private App directorEscena;
     private Horario horario;
@@ -27,7 +28,6 @@ public class VentanaHorarioAddUpdateController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     public void guardar() throws ParseException {
@@ -135,5 +135,4 @@ public class VentanaHorarioAddUpdateController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-
 }

@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+
 @Entity
 @Table(name = "alumno")
 @NamedQueries({@NamedQuery(name = "Alumno.findAll", query = "select a from Alumno a")})
@@ -54,7 +55,6 @@ public class Alumno implements Serializable {
     public StringProperty carne() {
         return this.carne;
     }
-
     //
     @Column(name = "no_expediente")
     public String getNoExpediente() {
@@ -68,7 +68,6 @@ public class Alumno implements Serializable {
     public StringProperty noExpediente() {
         return this.noExpediente;
     }
-
     //
     @Column(name = "apellidos")
     public String getApellidos() {
@@ -82,7 +81,6 @@ public class Alumno implements Serializable {
     public StringProperty apellidos() {
         return this.apellidos;
     }
-
     //
     @Column(name = "nombres")
     public String getNombres() {
@@ -96,7 +94,6 @@ public class Alumno implements Serializable {
     public StringProperty nombres() {
         return this.nombres;
     }
-
     //
     @Column(name = "email")
     public String getEmail() {

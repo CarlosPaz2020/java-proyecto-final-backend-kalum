@@ -14,31 +14,20 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.ImageView;
 import javafx.fxml.FXML;
 
+
 public class VentanaAlumnoAddUpdateController implements Initializable {
     private App directorEscena;
     private Alumno alumno;
 
-    @FXML
-    private TextField txtCarne;
-
-    @FXML
-    private TextField txtNoExpediente;
-
-    @FXML
-    private TextField txtApellidos;
-
-    @FXML
-    private TextField txtNombres;
-
-    @FXML
-    private TextField txtEmail;
-
-    @FXML
-    private ImageView imgFoto;
+    @FXML private TextField txtCarne;
+    @FXML private TextField txtNoExpediente;
+    @FXML private TextField txtApellidos;
+    @FXML private TextField txtNombres;
+    @FXML private TextField txtEmail;
+    @FXML private ImageView imgFoto;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     public void guardar() {
@@ -110,7 +99,6 @@ public class VentanaAlumnoAddUpdateController implements Initializable {
                 } else {
                     this.txtApellidos.requestFocus();
                 }
-
             }
         }
     }
@@ -151,5 +139,4 @@ public class VentanaAlumnoAddUpdateController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-
 }

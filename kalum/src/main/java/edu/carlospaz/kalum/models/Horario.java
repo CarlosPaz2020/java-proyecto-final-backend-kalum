@@ -21,6 +21,7 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+
 @Entity
 @Table(name = "horario")
 @NamedQueries(@NamedQuery(name = "Horario.findAll", query = "select h from Horario h"))
@@ -56,7 +57,6 @@ public class Horario implements Serializable {
     public StringProperty horarioId() {
         return this.horarioId;
     }
-
     //
     @Temporal(value = TemporalType.TIME)
     @Column(name = "horario_inicio")
@@ -71,7 +71,6 @@ public class Horario implements Serializable {
     public ObjectProperty<Date> horarioInicio() {
         return this.horarioInicio;
     }
-
     //
     @Temporal(value = TemporalType.TIME)
     @Column(name = "horario_final")

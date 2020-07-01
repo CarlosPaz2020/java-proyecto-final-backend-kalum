@@ -15,12 +15,12 @@ import javafx.scene.control.TextFormatter;
 import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXML;
 
+
 public class VentanaCarreraTecnicaAddUpdateController implements Initializable {
     private App directorEscena;
     private CarreraTecnica carreraTecnica;
 
-    @FXML
-    private TextField txtNombre;
+    @FXML private TextField txtNombre;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -127,5 +127,4 @@ public class VentanaCarreraTecnicaAddUpdateController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-
 }

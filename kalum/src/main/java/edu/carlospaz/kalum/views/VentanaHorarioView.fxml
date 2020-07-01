@@ -8,23 +8,23 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaHorarioController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaHorarioController">
    <children>
-      <Label text="HORARIOS" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <Label styleClass="titulos" text="HORARIOS" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Line endX="549.0" layoutX="100.0" layoutY="40.0" startX="-100.0" />
-      <TableView fx:id="tblHorarios" layoutY="40.0" prefHeight="300.0" prefWidth="650.0">
+      <TableView fx:id="tblHorarios" layoutY="40.0" prefHeight="450.0" prefWidth="1000.0">
         <columns>
-          <TableColumn fx:id="colHorarioInicio" prefWidth="302.0" text="HORA INICIO" />
-          <TableColumn fx:id="colHorarioFinal" minWidth="0.0" prefWidth="346.0" text="HORA FINAL" />
+          <TableColumn fx:id="colHorarioInicio" prefWidth="487.33331298828125" text="HORA INICIO" />
+          <TableColumn fx:id="colHorarioFinal" minWidth="0.0" prefWidth="511.66668701171875" text="HORA FINAL" />
         </columns>
       </TableView>
-      <Button layoutX="22.0" layoutY="357.0" mnemonicParsing="false" onAction="#mostrarVentanaHorarioAddUpdate" prefWidth="80.0" text="NUEVO" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="116.0" layoutY="357.0" mnemonicParsing="false" onAction="#modificar" prefWidth="80.0" text="MODIFICAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="220.0" layoutY="357.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="80.0" text="ELIMINAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="215.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="570.0" layoutY="357.0" mnemonicParsing="false" onAction="#salir" prefWidth="80.0" text="SALIR" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="15.0" />
+      <Button layoutX="36.0" layoutY="551.0" mnemonicParsing="false" onAction="#mostrarVentanaHorarioAddUpdate" prefWidth="80.0" text="NUEVO" />
+      <Button layoutX="142.0" layoutY="550.0" mnemonicParsing="false" onAction="#modificar" prefWidth="80.0" text="MODIFICAR" />
+      <Button layoutX="246.0" layoutY="551.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="80.0" text="ELIMINAR" />
+      <Button layoutX="350.0" layoutY="551.0" mnemonicParsing="false" onAction="#salir" prefWidth="80.0" text="SALIR" />
    </children>
 </AnchorPane>

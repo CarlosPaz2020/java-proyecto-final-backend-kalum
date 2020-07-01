@@ -14,22 +14,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXML;
 
+
 public class VentanaSalonAddUpdateController implements Initializable {
     private App directorEscena;
     private Salon salon;
 
-    @FXML
-    private TextField txtNombre;
-
-    @FXML
-    private TextField txtDescripcion;
-
-    @FXML
-    private TextField txtCapacidad;
+    @FXML private TextField txtNombre;
+    @FXML private TextField txtDescripcion;
+    @FXML private TextField txtCapacidad;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     public void guardar() {
@@ -135,5 +130,4 @@ public class VentanaSalonAddUpdateController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-
 }

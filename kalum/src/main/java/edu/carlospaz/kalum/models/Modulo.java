@@ -12,11 +12,11 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
 
 @Entity
 @Table(name = "modulo")
@@ -54,7 +54,6 @@ public class Modulo implements Serializable {
     public StringProperty moduloId() {
         return this.moduloId;
     }
-
     //
     @Column(name = "nombre_modulo")
     public String getNombreModulo() {

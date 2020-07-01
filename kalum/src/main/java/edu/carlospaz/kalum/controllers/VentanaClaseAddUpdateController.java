@@ -23,6 +23,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
+
 public class VentanaClaseAddUpdateController implements Initializable {
     private App directorEscena;
     private Clase clase;
@@ -41,7 +42,6 @@ public class VentanaClaseAddUpdateController implements Initializable {
     @FXML private ComboBox<CarreraTecnica> cmbCarrera;
     @FXML private TextField txtCantAsig;
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         salones = FXCollections.observableArrayList((List<Salon>)
@@ -58,7 +58,6 @@ public class VentanaClaseAddUpdateController implements Initializable {
 
         carrerasTecnicas = FXCollections.observableArrayList((List<CarreraTecnica>)
             Conexion.getInstancia().findAll("CarreraTecnica.findAll"));
-        
         this.cmbCarrera.setItems(carrerasTecnicas);
     }
 
@@ -192,6 +191,4 @@ public class VentanaClaseAddUpdateController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-
-
 }

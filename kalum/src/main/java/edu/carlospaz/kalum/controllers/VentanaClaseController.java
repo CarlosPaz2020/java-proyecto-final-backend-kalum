@@ -21,6 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXML;
 
+
 public class VentanaClaseController implements Initializable {
     private App directorEscena;
     private ObservableList<Clase> listaClases;
@@ -59,8 +60,8 @@ public class VentanaClaseController implements Initializable {
                 formatoHora.format(cellHorario.getValue().getHorario().getHorarioFinal())));
     this.colInstructor.setCellValueFactory(cellInstructor
             -> new ReadOnlyStringWrapper(
-                cellInstructor.getValue().getInstructor().getApellidos() + ", " + 
-                cellInstructor.getValue().getInstructor().getNombres()));
+                cellInstructor.getValue().getInstructor().getNombres() + " " + 
+                cellInstructor.getValue().getInstructor().getApellidos()));
     this.colCarrera.setCellValueFactory(cellCarrera
             -> cellCarrera.getValue().getCarrera().nombre());
     this.colCantAsig.setCellValueFactory(cellCantAsig
@@ -145,7 +146,4 @@ public class VentanaClaseController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-
-    
- 
 }

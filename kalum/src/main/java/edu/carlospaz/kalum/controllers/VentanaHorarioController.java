@@ -21,6 +21,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.beans.property.ReadOnlyStringWrapper;
 
+
 public class VentanaHorarioController implements Initializable {
     private App directorEscena;
     private ObservableList<Horario> listaHorarios;
@@ -123,6 +124,4 @@ public class VentanaHorarioController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-    
-    
 }

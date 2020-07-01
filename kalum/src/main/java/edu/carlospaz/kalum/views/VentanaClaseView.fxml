@@ -8,30 +8,30 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaClaseController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaClaseController">
    <children>
-      <Label layoutX="10.0" layoutY="10.0" text="CLASES" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <Label layoutX="10.0" layoutY="10.0" styleClass="titulos" text="CLASES" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Line endX="549.0" layoutX="100.0" layoutY="40.0" startX="-100.0" />
-      <TableView fx:id="tblClases" layoutY="40.0" prefHeight="300.0" prefWidth="900.0">
+      <TableView fx:id="tblClases" layoutY="40.0" prefHeight="450.0" prefWidth="1000.0">
          <columns>
-            <TableColumn fx:id="colSalon" prefWidth="57.0" text="SALÓN" />
-            <TableColumn fx:id="colCiclo" minWidth="0.0" prefWidth="56.0" text="CICLO" />
-            <TableColumn fx:id="colDescripcion" prefWidth="179.0" text="DESCRIPCIÓN" />
-            <TableColumn fx:id="colCupoMin" prefWidth="65.0" text="CUP. MÍN." />
-            <TableColumn fx:id="colCupoMax" prefWidth="73.0" text="CUP. MÁX." />
-            <TableColumn fx:id="colHorario" prefWidth="108.0" text="HORARIO" />
-            <TableColumn fx:id="colInstructor" prefWidth="122.0" text="INSTRUCTOR" />
-            <TableColumn fx:id="colCarrera" prefWidth="130.0" text="CARRERA" />
-            <TableColumn fx:id="colCantAsig" prefWidth="109.0" text="CANT. ASIG." />
+            <TableColumn fx:id="colSalon" prefWidth="80.99999618530273" text="SALÓN" />
+            <TableColumn fx:id="colCiclo" minWidth="0.0" prefWidth="75.66667175292969" text="CICLO" />
+            <TableColumn fx:id="colDescripcion" prefWidth="138.3333282470703" text="DESCRIPCIÓN" />
+            <TableColumn fx:id="colCupoMin" prefWidth="74.66668701171875" text="CUP. MÍN." />
+            <TableColumn fx:id="colCupoMax" prefWidth="79.0" text="CUP. MÁX." />
+            <TableColumn fx:id="colHorario" prefWidth="92.0" text="HORARIO" />
+            <TableColumn fx:id="colInstructor" prefWidth="166.0" text="INSTRUCTOR" />
+            <TableColumn fx:id="colCarrera" prefWidth="206.0" text="CARRERA" />
+            <TableColumn fx:id="colCantAsig" prefWidth="85.0" text="CANT. ASIG." />
          </columns>
       </TableView>
-      <Button layoutX="22.0" layoutY="354.0" mnemonicParsing="false" onAction="#mostrarVentanaClaseAddUpdate" prefWidth="80.0" text="NUEVO" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="116.0" layoutY="354.0" mnemonicParsing="false" onAction="#modificar" prefWidth="80.0" text="MODIFICAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="115.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="220.0" layoutY="354.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="80.0" text="ELIMINAR" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="215.0" AnchorPane.topAnchor="357.0" />
-      <Button layoutX="570.0" layoutY="354.0" mnemonicParsing="false" onAction="#salir" prefWidth="80.0" text="SALIR" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="357.0" />
+      <Button layoutX="29.0" layoutY="552.0" mnemonicParsing="false" onAction="#mostrarVentanaClaseAddUpdate" prefWidth="80.0" text="NUEVO" />
+      <Button layoutX="133.0" layoutY="552.0" mnemonicParsing="false" onAction="#modificar" prefWidth="80.0" text="MODIFICAR" />
+      <Button layoutX="241.0" layoutY="552.0" mnemonicParsing="false" onAction="#eliminar" prefWidth="80.0" text="ELIMINAR" />
+      <Button layoutX="350.0" layoutY="553.0" mnemonicParsing="false" onAction="#salir" prefWidth="80.0" text="SALIR" />
    </children>
 </AnchorPane>

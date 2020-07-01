@@ -10,11 +10,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
 
 @Entity
 @Table(name = "detalle_nota")
@@ -52,7 +52,6 @@ public class DetalleNota implements Serializable {
     public StringProperty detalleNotaId() {
         return this.detalleNotaId;
     }
-
     //
     @Column(name = "valor_nota")
     public int getValorNota() {

@@ -1,9 +1,14 @@
 package edu.carlospaz.kalum.controllers;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import edu.carlospaz.kalum.App;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Alert.AlertType;
+
 
 public class VentanaPrincipalController implements Initializable {
     private App directorEscena;
@@ -37,6 +42,22 @@ public class VentanaPrincipalController implements Initializable {
         this.directorEscena.mostrarVentanaClase();
     }
 
+    public void salir() {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Ventana Principal");
+        alert.setHeaderText(null);
+        alert.setContentText("¿Desea salir del sistema?");
+        alert.initOwner(null);
+
+        Optional<ButtonType> seleccion = alert.showAndWait();
+
+        if (seleccion.get() == ButtonType.OK) {
+            System.exit(0);
+        } else {
+            this.directorEscena.mostrarVentanaPrincipal();
+        }
+    }
+
     public App getDirectorEscena() {
         return directorEscena;
     }
@@ -44,6 +65,4 @@ public class VentanaPrincipalController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-    
-    
 }

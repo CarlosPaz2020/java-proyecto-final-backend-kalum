@@ -17,21 +17,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
+
 public class VentanaSalonController implements Initializable {
     private App directorEscena;
     private ObservableList<Salon> listaSalones;
     
-    @FXML
-    private TableView<Salon> tblSalones;
-
-    @FXML
-    private TableColumn<Salon, String> colNombre;
-
-    @FXML
-    private TableColumn<Salon, String> colDescripcion;
-
-    @FXML
-    private TableColumn<Salon, Number> colCapacidad;
+    @FXML private TableView<Salon> tblSalones;
+    @FXML private TableColumn<Salon, String> colNombre;
+    @FXML private TableColumn<Salon, String> colDescripcion;
+    @FXML private TableColumn<Salon, Number> colCapacidad;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -124,6 +118,4 @@ public class VentanaSalonController implements Initializable {
     public void setDirectorEscena(App directorEscena) {
         this.directorEscena = directorEscena;
     }
-    
-    
 }

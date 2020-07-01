@@ -3,7 +3,6 @@ package edu.carlospaz.kalum.models;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,11 +15,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+
 
 @Entity
 @Table(name = "seminario")
@@ -62,7 +61,6 @@ public class Seminario implements Serializable {
     public StringProperty seminarioId() {
         return this.seminarioId;
     }
-
     //
     @Column(name = "nombre_seminario")
     public String getNombreSeminario() {
@@ -76,7 +74,6 @@ public class Seminario implements Serializable {
     public StringProperty nombreSeminario() {
         return this.nombreSeminario;
     }
-
     //
     @Temporal(value = TemporalType.DATE)
     @Column(name = "fecha_inicio")
@@ -91,7 +88,6 @@ public class Seminario implements Serializable {
     public ObjectProperty<Date> fechaInicio() {
         return this.fechaInicio();
     }
-
     //
     @Temporal(value = TemporalType.DATE)
     @Column(name = "fecha_fin")
