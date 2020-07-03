@@ -18,7 +18,7 @@ import edu.carlospaz.kalum.models.Salon;
  * Hello world!
  */
 public class AppConsola {
-    public static void main(String[] args) {
+    //public static void main(String[] args) {
         //Conexion conexion = new Conexion();
         // for (Object registro : conexion.findAll("Modulo.findAll")) {
         //     Modulo carrera = (Modulo) registro;
@@ -97,5 +97,5 @@ public class AppConsola {
             // }
 
         
-    }
+    //}
 }
