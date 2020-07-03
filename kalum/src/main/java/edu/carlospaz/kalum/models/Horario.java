@@ -99,9 +99,9 @@ public class Horario implements Serializable {
     //
     @Override
     public String toString() {
-        DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
+        DateFormat formatoHora = new SimpleDateFormat("HH:mm");
         formatoHora.setTimeZone(TimeZone.getTimeZone("CST"));
-        return formatoHora.format(this.getHorarioInicio()) + " "
+        return formatoHora.format(this.getHorarioInicio()) + " - "
              + formatoHora.format(this.getHorarioFinal());
     }
 

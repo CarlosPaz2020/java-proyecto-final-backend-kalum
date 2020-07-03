@@ -42,6 +42,18 @@ public class VentanaPrincipalController implements Initializable {
         this.directorEscena.mostrarVentanaClase();
     }
 
+    public void mostrarVentanaAsignacionAlumno() {
+        this.directorEscena.mostrarVentanaAsignacionAlumno();
+    }
+
+    public void acercaDe() {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Acerca de ...");
+        alert.setHeaderText("Sistema de control académico");
+        alert.setContentText("Kalum v1.0.0 \nDesarrollado por: Carlos Paz \nGuatemala, C. A. -2020-");
+        alert.showAndWait();
+    }
+
     public void salir() {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Ventana Principal");

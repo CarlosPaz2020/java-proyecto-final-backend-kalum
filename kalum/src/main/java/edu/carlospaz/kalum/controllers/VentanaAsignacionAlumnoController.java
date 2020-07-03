@@ -7,9 +7,10 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.TimeZone;
 import edu.carlospaz.kalum.App;
 import edu.carlospaz.kalum.db.Conexion;
-import edu.carlospaz.kalum.models.Horario;
+import edu.carlospaz.kalum.models.AsignacionAlumno;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -22,56 +23,62 @@ import javafx.fxml.FXML;
 import javafx.beans.property.ReadOnlyStringWrapper;
 
 
-public class VentanaHorarioController implements Initializable {
+public class VentanaAsignacionAlumnoController implements Initializable {
     private App directorEscena;
-    private ObservableList<Horario> listaHorarios;
+    private ObservableList<AsignacionAlumno> listaAsignaciones;
 
-    @FXML private TableView<Horario> tblHorarios;
-    @FXML private TableColumn<Horario,String> colHorarioInicio;
-    @FXML private TableColumn<Horario,String> colHorarioFinal;
+    @FXML private TableView<AsignacionAlumno> tblAsignaciones;
+    @FXML private TableColumn<AsignacionAlumno,String> colFechaAsignacion;
+    @FXML private TableColumn<AsignacionAlumno,String> colClase;
+    @FXML private TableColumn<AsignacionAlumno,String> colCarne;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        DateFormat formatoHora = new SimpleDateFormat("HH:mm");
-        listaHorarios = FXCollections
-                .observableArrayList((List<Horario>) Conexion.getInstancia().findAll("Horario.findAll"));
-        this.tblHorarios.setItems(listaHorarios);
+        DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+        formatoFecha.setTimeZone(TimeZone.getTimeZone("CST"));
+        listaAsignaciones = FXCollections
+                .observableArrayList((List<AsignacionAlumno>) Conexion.getInstancia().findAll("AsignacionAlumno.findAll"));
+        this.tblAsignaciones.setItems(listaAsignaciones);
         
-        this.colHorarioInicio.setCellValueFactory(cellHorarioInicio
+        this.colFechaAsignacion.setCellValueFactory(cellFechaAsignacion
             -> new ReadOnlyStringWrapper(
-                formatoHora.format(cellHorarioInicio.getValue().getHorarioInicio()).toString()));
-        this.colHorarioFinal.setCellValueFactory(cellHorarioFinal
+                formatoFecha.format(cellFechaAsignacion.getValue().getFechaAsignacion()).toString()));
+        this.colClase.setCellValueFactory(cellDescripcionClase
+                -> cellDescripcionClase.getValue().getClase().descripcion());
+        this.colCarne.setCellValueFactory(cellCarneAlumno
                 -> new ReadOnlyStringWrapper(
-                    formatoHora.format(cellHorarioFinal.getValue().getHorarioFinal()).toString()));
+                    cellCarneAlumno.getValue().getAlumno().getCarne() + " - " +
+                    cellCarneAlumno.getValue().getAlumno().getApellidos() + ", " + 
+                    cellCarneAlumno.getValue().getAlumno().getNombres()));        
     }
 
     public void modificar() throws ParseException {
-        if (this.tblHorarios.getSelectionModel().getSelectedItem() == null) {
+        if (this.tblAsignaciones.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Horarios");
+            alert.setTitle("Asignaciones");
             alert.setHeaderText(null);
             alert.setContentText("Debe seleccionar un registro");
             alert.initOwner(null);
             alert.show();
         } else {
-            Horario horario = this.tblHorarios.getSelectionModel().getSelectedItem();
-            System.out.println(horario.getHorarioInicio() + "-" + horario.getHorarioFinal());
-            this.directorEscena.mostrarVentanaHorarioAddUpdate(horario);
+            AsignacionAlumno asignacion = this.tblAsignaciones.getSelectionModel().getSelectedItem();
+            this.directorEscena.mostrarVentanaAsignacionAlumnoAddUpdate(asignacion);
         }
     }
 
     public void eliminar() {
-        if (this.tblHorarios.getSelectionModel().getSelectedItem() == null) {
+        if (this.tblAsignaciones.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Horarios");
+            alert.setTitle("Asignaciones");
             alert.setHeaderText(null);
             alert.setContentText("Debe seleccionar un registro");
             alert.initOwner(null);
             alert.show();
         } else {
-            Horario horario = this.tblHorarios.getSelectionModel().getSelectedItem();
+            AsignacionAlumno asignacion = this.tblAsignaciones.getSelectionModel().getSelectedItem();
             Alert alert = new Alert(AlertType.CONFIRMATION);
-            alert.setTitle("Horarios");
+            alert.setTitle("Asignaciones");
             alert.setHeaderText(null);
             alert.setContentText("¿Desea eliminar el registro?");
             alert.initOwner(null);
@@ -79,23 +86,23 @@ public class VentanaHorarioController implements Initializable {
             Optional<ButtonType> seleccion = alert.showAndWait();
 
             if (seleccion.get() == ButtonType.OK) {
-                Conexion.getInstancia().eliminar(horario);
+                Conexion.getInstancia().eliminar(asignacion);
                 Alert alert1 = new Alert(AlertType.INFORMATION);
-                alert1.setTitle("Horarios");
+                alert1.setTitle("Asignaciones");
                 alert1.setHeaderText(null);
                 alert1.setContentText("Registro eliminado correctamente");
                 alert1.initOwner(null);
                 alert1.show();
-                this.directorEscena.mostrarVentanaHorario();
+                this.directorEscena.mostrarVentanaAsignacionAlumno();
             } else {
-                this.directorEscena.mostrarVentanaHorario();
+                this.directorEscena.mostrarVentanaAsignacionAlumno();
             }
         }
     }
 
     public void salir() {
         Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle("Horarios");
+        alert.setTitle("Asignaciones");
         alert.setHeaderText(null);
         alert.setContentText("¿Desea salir de esta ventana?");
         alert.initOwner(null);
@@ -105,7 +112,7 @@ public class VentanaHorarioController implements Initializable {
         if (seleccion.get() == ButtonType.OK) {
             this.directorEscena.mostrarVentanaPrincipal();
         } else {
-            this.directorEscena.mostrarVentanaHorario();
+            this.directorEscena.mostrarVentanaAsignacionAlumno();
         }
     }
 
@@ -113,8 +120,8 @@ public class VentanaHorarioController implements Initializable {
         this.directorEscena.mostrarVentanaPrincipal();
     }
 
-    public void mostrarVentanaHorarioAddUpdate() {
-        this.directorEscena.mostrarVentanaHorarioAddUpdate();
+    public void mostrarVentanaAsignacionAlumnoAddUpdate() {
+        this.directorEscena.mostrarVentanaAsignacionAlumnoAddUpdate();
     }
 
     public App getDirectorEscena() {

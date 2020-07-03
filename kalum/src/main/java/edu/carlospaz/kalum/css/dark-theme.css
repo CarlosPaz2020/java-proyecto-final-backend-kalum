@@ -165,6 +165,24 @@
     -jfx-default-color: #009688;
 }
 
+.date-picker-popup > .month-year-pane > .spinner > .spinner-label {
+    -fx-font-size: 1.083333em;
+    -fx-alignment: CENTER;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.date-picker-popup {
+    -fx-padding: 1;
+    -fx-background-color: #009688;
+}
+
+/* Color de pestaña Mes/Año */
+.date-picker-popup > .month-year-pane {
+    -fx-padding: 4;
+    -fx-background-color: #009688;
+}
+
 .jfx-date-picker,
 .jfx-date-picker:focused,
 .jfx-date-picker:focused:editable {
@@ -175,7 +193,7 @@
 .jfx-date-picker:editable > .arrow-button,
 .jfx-date-picker:focused > .arrow-button,
 .jfx-date-picker:editable:focused > .arrow-button {
-    -fx-background-color: TRANSPARENT;
+    -fx-background-color: TRANSPARENT; /* TRANSPARENT*/
     -fx-padding: 1 8 1 8;
 }
 
@@ -187,7 +205,7 @@
     -fx-spacing: 0.25em; /* 3 */
     -fx-alignment: CENTER;
     -fx-fill-height: false;
-    -fx-background-color: transparent;
+    -fx-background-color: TRANSPARENT; /* TRANSPARENT*/
 }
 
 .date-picker-popup > * > .spinner > .label {

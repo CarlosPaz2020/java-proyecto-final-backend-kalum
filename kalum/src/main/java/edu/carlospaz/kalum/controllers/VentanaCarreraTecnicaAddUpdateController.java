@@ -22,6 +22,7 @@ public class VentanaCarreraTecnicaAddUpdateController implements Initializable {
 
     @FXML private TextField txtNombre;
 
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.txtNombre.requestFocus();

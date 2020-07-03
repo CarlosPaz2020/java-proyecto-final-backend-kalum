@@ -19,6 +19,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -59,6 +61,55 @@ public class VentanaClaseAddUpdateController implements Initializable {
         carrerasTecnicas = FXCollections.observableArrayList((List<CarreraTecnica>)
             Conexion.getInstancia().findAll("CarreraTecnica.findAll"));
         this.cmbCarrera.setItems(carrerasTecnicas);
+
+        // Método para permitir sólo números enteros en el campo Ciclo
+        txtCiclo.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    txtCiclo.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+
+        // Método para permitir sólo números enteros en el campo Cupo Mínimo
+        txtCupoMin.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    txtCupoMin.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+
+        // Método para permitir sólo números enteros en el campo Cupo Máximo
+        txtCupoMax.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    txtCupoMax.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+
+        // Método para permitir sólo 4 dígitos enteros en el campo Ciclo
+        txtCiclo.setOnKeyTyped(event ->{
+            int maxCharacters = 3;
+            if(txtCiclo.getText().length() > maxCharacters) event.consume();
+        });
+
+        // Método para permitir sólo 3 dígitos enteros en el campo Cupo Mínimo
+        txtCupoMin.setOnKeyTyped(event ->{
+            int maxCharacters = 2;
+            if(txtCupoMin.getText().length() > maxCharacters) event.consume();
+        });
+
+        // Método para permitir sólo 3 dígitos enteros en el campo Cupo Máximo
+        txtCupoMax.setOnKeyTyped(event ->{
+            int maxCharacters = 2;
+            if(txtCupoMax.getText().length() > maxCharacters) event.consume();
+        });
+
     }
 
     public void guardar() {

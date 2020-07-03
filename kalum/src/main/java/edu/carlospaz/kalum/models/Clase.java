@@ -193,10 +193,7 @@ public class Clase implements Serializable {
     //
     @Override
     public String toString() {
-        return this.getClaseId() + " " + this.getDescripcion() + " " + this.getCiclo()
-                + " " + this.getCupoMinimo() + " " + this.getCupoMaximo() + " " + this.getSalon()
-                + " " + this.getHorario() + " " + this.getInstructor() + " " + this.getCarrera()
-                + " " + this.getCantidadAsignaciones();
+        return this.getDescripcion();
     }
 
     private static final long serialVersionUID = 1L;

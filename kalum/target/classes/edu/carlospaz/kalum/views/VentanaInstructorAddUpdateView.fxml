@@ -35,9 +35,9 @@
             <Rectangle2D />
          </viewport></ImageView>
       <Label layoutX="836.0" layoutY="61.0" text="FOTO:" AnchorPane.topAnchor="61.0" />
-      <Button layoutX="815.0" layoutY="295.0" mnemonicParsing="false" onAction="#elegirFoto" prefHeight="25.0" prefWidth="100.0" text="ELEGIR FOTO..." />
+      <Button layoutX="815.0" layoutY="295.0" mnemonicParsing="false" onAction="#elegirFoto" prefHeight="26.0" prefWidth="100.0" text="ELEGIR FOTO..." />
       <Button layoutX="23.0" layoutY="557.0" mnemonicParsing="false" onAction="#guardar" prefWidth="80.0" text="GUARDAR" />
       <Button layoutX="128.0" layoutY="557.0" mnemonicParsing="false" onAction="#cancelar" prefWidth="80.0" text="CANCELAR" />
-      <TextField fx:id="txtUrlFoto" layoutX="764.0" layoutY="250.0" prefHeight="28.0" prefWidth="207.0" />
+      <TextField fx:id="txtUrlFoto" editable="false" layoutX="764.0" layoutY="250.0" prefHeight="28.0" prefWidth="207.0" />
    </children>
 </AnchorPane>

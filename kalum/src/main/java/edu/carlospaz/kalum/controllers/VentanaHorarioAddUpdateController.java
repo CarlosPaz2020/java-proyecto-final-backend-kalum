@@ -16,6 +16,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 
 
@@ -26,9 +28,42 @@ public class VentanaHorarioAddUpdateController implements Initializable {
     @FXML private TextField txtHorarioInicio;
     @FXML private TextField txtHorarioFinal;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    }
+
+    // Método para colocar máscara de hora (10:30)
+    // txtHorarioInicio.lengthProperty().addListener(new ChangeListener<Number>() {
+    //     @Override
+    //     public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+    //         if (newValue.intValue() < 5) {
+    //             String value = txtHorarioInicio.getText();
+    //             value = value.replaceAll("[^0-9]", "");
+    //             //value = value.replaceFirst("(\\d{2})(\\d)", "$1:$2");
+    //             //value = value.replaceFirst("(\\d{2})\\:(\\d{2})(\\d)", "$1:$2:$3");
+    //             value = value.replaceFirst("(\\d{2})(\\d)", "$1:$2");
+    //             //value = value.replaceFirst("(\\d{2}):(\\d{2})(\\d)", "$1:$2:$3");
+                
+    //             txtHorarioInicio.setText(value);
+    //             //positionCaret(txtHorarioInicio);
+    //         }
+    //     }
+    // });
+
+
+    // Método para permitir sólo 5 dígitos en el campo Horario Inicio
+    txtHorarioInicio.setOnKeyTyped(event ->{
+        int maxCharacters = 4;
+        if(txtHorarioInicio.getText().length() > maxCharacters) event.consume();
+    });
+
+    // Método para permitir sólo 5 dígitos en el campo Horario Final
+    txtHorarioFinal.setOnKeyTyped(event ->{
+        int maxCharacters = 4;
+        if(txtHorarioFinal.getText().length() > maxCharacters) event.consume();
+    });
+}
+
 
     public void guardar() throws ParseException {
         if (txtHorarioInicio.getText().isEmpty()
@@ -51,10 +86,11 @@ public class VentanaHorarioAddUpdateController implements Initializable {
                 Optional<ButtonType> seleccion = alert2.showAndWait();
 
                 if (seleccion.get() == ButtonType.OK) {
-                    DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
+                    DateFormat formatoHora = new SimpleDateFormat("HH:mm");
                     formatoHora.setTimeZone(TimeZone.getTimeZone("CST"));
                     horario.setHorarioInicio(formatoHora.parse(txtHorarioInicio.getText()));
                     horario.setHorarioFinal(formatoHora.parse(txtHorarioFinal.getText()));
+                    
                     Conexion.getInstancia().modificar(horario);
                     Alert alert = new Alert(AlertType.INFORMATION);
                     alert.setTitle("Horarios");
@@ -68,7 +104,7 @@ public class VentanaHorarioAddUpdateController implements Initializable {
                 }
                 
             } else {
-                DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
+                DateFormat formatoHora = new SimpleDateFormat("HH:mm");
                 formatoHora.setTimeZone(TimeZone.getTimeZone("CST"));
                 Horario horario = new Horario();
                 horario.setHorarioId(UUID.randomUUID().toString());
@@ -122,7 +158,7 @@ public class VentanaHorarioAddUpdateController implements Initializable {
 
     public void setHorario(Horario horario) throws ParseException {
         this.horario = horario;
-        DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
+        DateFormat formatoHora = new SimpleDateFormat("HH:mm");
         formatoHora.setTimeZone(TimeZone.getTimeZone("CST"));
         this.txtHorarioInicio.setText(formatoHora.format(horario.getHorarioInicio()));
         this.txtHorarioFinal.setText(formatoHora.format(horario.getHorarioFinal()));

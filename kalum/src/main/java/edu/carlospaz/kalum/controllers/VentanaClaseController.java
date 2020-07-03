@@ -39,7 +39,7 @@ public class VentanaClaseController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        DateFormat formatoHora = new SimpleDateFormat("HH:mm:ss");
+        DateFormat formatoHora = new SimpleDateFormat("HH:mm");
         listaClases = FXCollections.observableArrayList(
             (List<Clase>) Conexion.getInstancia().findAll("Clase.findAll"));
     this.tblClases.setItems(listaClases);

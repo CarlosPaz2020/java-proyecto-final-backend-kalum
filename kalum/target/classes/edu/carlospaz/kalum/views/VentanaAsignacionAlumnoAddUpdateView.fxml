@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../css/dark-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.carlospaz.kalum.controllers.VentanaAsignacionAlumnoAddUpdateController">
+   <children>
+      <Label layoutX="10.0" layoutY="10.0" styleClass="titulos" text="ASIGNACIONES" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Line endX="549.0" layoutX="100.0" layoutY="40.0" startX="-100.0" />
+      <Label layoutX="19.0" layoutY="109.0" text="FECHA DE ASIGNACIÓN:" />
+      <Label layoutX="122.0" layoutY="192.0" text="CLASE:" AnchorPane.leftAnchor="122.0" AnchorPane.topAnchor="192.0" />
+      <Label layoutX="120.0" layoutY="271.0" text="CARNÉ:" />
+      <TextField fx:id="txtFechaAsignacion" disable="true" editable="false" layoutX="189.0" layoutY="104.0" prefHeight="25.0" prefWidth="219.0" AnchorPane.leftAnchor="189.0" AnchorPane.topAnchor="104.0" />
+      <ComboBox fx:id="cmbClase" layoutX="195.0" layoutY="184.0" prefHeight="28.0" prefWidth="460.0" AnchorPane.leftAnchor="189.0" />
+      <ComboBox fx:id="cmbCarne" layoutX="196.0" layoutY="264.0" prefHeight="28.0" prefWidth="460.0" AnchorPane.leftAnchor="189.0" />
+      <Button layoutX="26.0" layoutY="555.0" mnemonicParsing="false" onAction="#guardar" prefWidth="80.0" text="GUARDAR" />
+      <Button layoutX="131.0" layoutY="555.0" mnemonicParsing="false" onAction="#cancelar" prefWidth="80.0" text="CANCELAR" />
+   </children>
+</AnchorPane>

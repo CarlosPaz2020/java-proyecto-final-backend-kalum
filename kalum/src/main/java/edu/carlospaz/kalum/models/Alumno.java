@@ -121,9 +121,8 @@ public class Alumno implements Serializable {
     //
     @Override
     public String toString() {
-        return this.getCarne() + " " + this.getNoExpediente()
-                + " " + this.getApellidos() + " " + this.getNoExpediente()
-                + " " + this.getEmail();
+        return this.getCarne() + " - " 
+                + this.getApellidos() + ", " + this.getNombres();
     }
 
     private static final long serialVersionUID = 1L;

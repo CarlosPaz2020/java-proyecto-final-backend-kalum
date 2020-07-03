@@ -1,7 +1,11 @@
 package edu.carlospaz.kalum.models;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -90,7 +94,9 @@ public class AsignacionAlumno implements Serializable {
     //
     @Override
     public String toString() {
-        return this.getAsignacionId() + " " + this.getFechaAsignacion()
+        DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+        formatoFecha.setTimeZone(TimeZone.getTimeZone("CST"));
+        return this.getAsignacionId() + " " + formatoFecha.format(this.getFechaAsignacion())
                 + " " + this.getClase() + " " + this.getAlumno();
     }
 

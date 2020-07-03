@@ -6,6 +6,8 @@ import java.text.ParseException;
 import java.util.Optional;
 import edu.carlospaz.kalum.controllers.VentanaAlumnoAddUpdateController;
 import edu.carlospaz.kalum.controllers.VentanaAlumnoController;
+import edu.carlospaz.kalum.controllers.VentanaAsignacionAlumnoAddUpdateController;
+import edu.carlospaz.kalum.controllers.VentanaAsignacionAlumnoController;
 import edu.carlospaz.kalum.controllers.VentanaCarreraTecnicaAddUpdateController;
 import edu.carlospaz.kalum.controllers.VentanaCarreraTecnicaController;
 import edu.carlospaz.kalum.controllers.VentanaClaseAddUpdateController;
@@ -18,18 +20,22 @@ import edu.carlospaz.kalum.controllers.VentanaPrincipalController;
 import edu.carlospaz.kalum.controllers.VentanaSalonAddUpdateController;
 import edu.carlospaz.kalum.controllers.VentanaSalonController;
 import edu.carlospaz.kalum.models.Alumno;
+import edu.carlospaz.kalum.models.AsignacionAlumno;
 import edu.carlospaz.kalum.models.CarreraTecnica;
 import edu.carlospaz.kalum.models.Clase;
 import edu.carlospaz.kalum.models.Horario;
 import edu.carlospaz.kalum.models.Instructor;
 import edu.carlospaz.kalum.models.Salon;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.WindowEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -52,6 +58,17 @@ public class App extends Application {
         this.escenarioPrincipal.initStyle(StageStyle.DECORATED);
         this.escenarioPrincipal.setResizable(false);
         this.escenarioPrincipal.show();
+
+        Image applicationIcon = new Image(getClass().getResourceAsStream("\\img\\k.PNG"));
+        escenarioPrincipal.getIcons().add(applicationIcon);
+
+        //Método para deshabilitar la función de cerrar ventana con el botón Close
+        escenarioPrincipal.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                event.consume();
+            }
+        });
     }
 
     public void mostrarVentanaPrincipal() {
@@ -264,6 +281,40 @@ public class App extends Application {
                     "VentanaClaseAddUpdateView.fxml", 1000, 600);
             ventanaClaseAddUpdateView.setDirectorEscena(this);
             ventanaClaseAddUpdateView.setClase(clase);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void mostrarVentanaAsignacionAlumno() {
+        try {
+            VentanaAsignacionAlumnoController ventanaAsignacionAlumnoView 
+                    = (VentanaAsignacionAlumnoController) cambiarEscena(
+                    "VentanaAsignacionAlumnoView.fxml", 1000, 600);
+                    ventanaAsignacionAlumnoView.setDirectorEscena(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void mostrarVentanaAsignacionAlumnoAddUpdate() {
+        try {
+            VentanaAsignacionAlumnoAddUpdateController ventanaAsignacionAlumnoAddUpdateView
+                    = (VentanaAsignacionAlumnoAddUpdateController) cambiarEscena(
+                    "VentanaAsignacionAlumnoAddUpdateView.fxml", 1000, 600);
+            ventanaAsignacionAlumnoAddUpdateView.setDirectorEscena(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void mostrarVentanaAsignacionAlumnoAddUpdate(AsignacionAlumno asignacion) throws ParseException {
+        try {
+            VentanaAsignacionAlumnoAddUpdateController ventanaAsignacionAlumnoAddUpdateView
+                    = (VentanaAsignacionAlumnoAddUpdateController) cambiarEscena(
+                    "VentanaAsignacionAlumnoAddUpdateView.fxml", 1000, 600);
+            ventanaAsignacionAlumnoAddUpdateView.setDirectorEscena(this);
+            ventanaAsignacionAlumnoAddUpdateView.setAsignacion(asignacion);
         } catch (IOException e) {
             e.printStackTrace();
         }

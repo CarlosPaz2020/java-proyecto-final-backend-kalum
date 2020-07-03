@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.UUID;
+
 import edu.carlospaz.kalum.App;
 import edu.carlospaz.kalum.db.Conexion;
 import edu.carlospaz.kalum.models.Salon;
@@ -12,6 +13,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 
 
@@ -25,6 +28,22 @@ public class VentanaSalonAddUpdateController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        // Método para permitir sólo números enteros en el campo Capacidad
+        txtCapacidad.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    txtCapacidad.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+
+        // Método para permitir sólo 3 dígitos enteros en el campo Capacidad
+        txtCapacidad.setOnKeyTyped(event ->{
+            int maxCharacters = 2;
+            if(txtCapacidad.getText().length() > maxCharacters) event.consume();
+        });
     }
 
     public void guardar() {
